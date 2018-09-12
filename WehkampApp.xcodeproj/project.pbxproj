@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510D356D726D585ABBD112C6 /* Pods_WehkampAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BC0ECC5FF0DA5C40D450CC /* Pods_WehkampAppTests.framework */; };
+		77CD63C62149785400D396DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63C52149785400D396DA /* LoginViewController.swift */; };
+		77CD63CB2149851000D396DA /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63CA2149851000D396DA /* PaddedTextField.swift */; };
 		77EFDCC421494BD0005F9CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCC321494BD0005F9CDD /* AppDelegate.swift */; };
-		77EFDCC621494BD0005F9CDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCC521494BD0005F9CDD /* ViewController.swift */; };
 		77EFDCC921494BD0005F9CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCC721494BD0005F9CDD /* Main.storyboard */; };
 		77EFDCCB21494BD1005F9CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCA21494BD1005F9CDD /* Assets.xcassets */; };
 		77EFDCCE21494BD1005F9CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCC21494BD1005F9CDD /* LaunchScreen.storyboard */; };
 		77EFDCD921494BD2005F9CDD /* WehkampAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */; };
+		77EFDCE521495005005F9CDD /* ServerApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCE421495005005F9CDD /* ServerApiProtocol.swift */; };
+		77EFDCE7214950AF005F9CDD /* ServerApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCE6214950AF005F9CDD /* ServerApiService.swift */; };
+		77EFDCE92149587C005F9CDD /* ServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCE82149587C005F9CDD /* ServerApi.swift */; };
+		77EFDCEB21496990005F9CDD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCEA21496990005F9CDD /* StorageManager.swift */; };
+		77EFDCEE21496DB9005F9CDD /* WAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCED21496DB9005F9CDD /* WAError.swift */; };
+		77EFDCF021497061005F9CDD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCEF21497061005F9CDD /* Router.swift */; };
+		77EFDCF32149709E005F9CDD /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCF22149709E005F9CDD /* Routable.swift */; };
+		77EFDCF5214970DA005F9CDD /* AppControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCF4214970DA005F9CDD /* AppControllerType.swift */; };
+		77EFDCF9214974D7005F9CDD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCF8214974D7005F9CDD /* LoginViewModel.swift */; };
+		93254CC0A9F15A01D30D46DD /* Pods_WehkampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5EE14CAA0221F5C1A3C364 /* Pods_WehkampApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084C1F0989C031A80B5F9671 /* Pods-WehkampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WehkampApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WehkampApp/Pods-WehkampApp.release.xcconfig"; sourceTree = "<group>"; };
+		2B0AE957DB81F2EF72A8932A /* Pods-WehkampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WehkampApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WehkampApp/Pods-WehkampApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4AD43D37AB214E74B148FAA1 /* Pods-WehkampAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WehkampAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WehkampAppTests/Pods-WehkampAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		62BC0ECC5FF0DA5C40D450CC /* Pods_WehkampAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WehkampAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CD63C52149785400D396DA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		77CD63CA2149851000D396DA /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		77EFDCC021494BD0005F9CDD /* WehkampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WehkampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFDCC321494BD0005F9CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77EFDCC521494BD0005F9CDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77EFDCC821494BD0005F9CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77EFDCCA21494BD1005F9CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77EFDCCD21494BD1005F9CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +53,17 @@
 		77EFDCD421494BD2005F9CDD /* WehkampAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WehkampAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WehkampAppTests.swift; sourceTree = "<group>"; };
 		77EFDCDA21494BD2005F9CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77EFDCE421495005005F9CDD /* ServerApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiProtocol.swift; sourceTree = "<group>"; };
+		77EFDCE6214950AF005F9CDD /* ServerApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiService.swift; sourceTree = "<group>"; };
+		77EFDCE82149587C005F9CDD /* ServerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApi.swift; sourceTree = "<group>"; };
+		77EFDCEA21496990005F9CDD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		77EFDCED21496DB9005F9CDD /* WAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAError.swift; sourceTree = "<group>"; };
+		77EFDCEF21497061005F9CDD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		77EFDCF22149709E005F9CDD /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		77EFDCF4214970DA005F9CDD /* AppControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControllerType.swift; sourceTree = "<group>"; };
+		77EFDCF8214974D7005F9CDD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CD5EE14CAA0221F5C1A3C364 /* Pods_WehkampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WehkampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6232952436EDE58C14921EB /* Pods-WehkampAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WehkampAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WehkampAppTests/Pods-WehkampAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93254CC0A9F15A01D30D46DD /* Pods_WehkampApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +79,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510D356D726D585ABBD112C6 /* Pods_WehkampAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27FF9FACFA9C1BF93DFFD531 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B0AE957DB81F2EF72A8932A /* Pods-WehkampApp.debug.xcconfig */,
+				084C1F0989C031A80B5F9671 /* Pods-WehkampApp.release.xcconfig */,
+				F6232952436EDE58C14921EB /* Pods-WehkampAppTests.debug.xcconfig */,
+				4AD43D37AB214E74B148FAA1 /* Pods-WehkampAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		77CD63CC2149851700D396DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77CD63C52149785400D396DA /* LoginViewController.swift */,
+				77CD63CA2149851000D396DA /* PaddedTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		77EFDCB721494BD0005F9CDD = {
 			isa = PBXGroup;
 			children = (
 				77EFDCC221494BD0005F9CDD /* WehkampApp */,
 				77EFDCD721494BD2005F9CDD /* WehkampAppTests */,
 				77EFDCC121494BD0005F9CDD /* Products */,
+				27FF9FACFA9C1BF93DFFD531 /* Pods */,
+				D9261FA9E7D296E15DAB3683 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +129,11 @@
 		77EFDCC221494BD0005F9CDD /* WehkampApp */ = {
 			isa = PBXGroup;
 			children = (
+				77EFDCF721497449005F9CDD /* Modules */,
+				77EFDCF121497085005F9CDD /* Router */,
+				77EFDCEC21496998005F9CDD /* Managers */,
+				77EFDCE321494FE3005F9CDD /* Network */,
 				77EFDCC321494BD0005F9CDD /* AppDelegate.swift */,
-				77EFDCC521494BD0005F9CDD /* ViewController.swift */,
 				77EFDCC721494BD0005F9CDD /* Main.storyboard */,
 				77EFDCCA21494BD1005F9CDD /* Assets.xcassets */,
 				77EFDCCC21494BD1005F9CDD /* LaunchScreen.storyboard */,
@@ -96,6 +151,61 @@
 			path = WehkampAppTests;
 			sourceTree = "<group>";
 		};
+		77EFDCE321494FE3005F9CDD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCE421495005005F9CDD /* ServerApiProtocol.swift */,
+				77EFDCE6214950AF005F9CDD /* ServerApiService.swift */,
+				77EFDCE82149587C005F9CDD /* ServerApi.swift */,
+				77EFDCED21496DB9005F9CDD /* WAError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		77EFDCEC21496998005F9CDD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCEA21496990005F9CDD /* StorageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		77EFDCF121497085005F9CDD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCEF21497061005F9CDD /* Router.swift */,
+				77EFDCF22149709E005F9CDD /* Routable.swift */,
+				77EFDCF4214970DA005F9CDD /* AppControllerType.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		77EFDCF621497441005F9CDD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				77CD63CC2149851700D396DA /* Views */,
+				77EFDCF8214974D7005F9CDD /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		77EFDCF721497449005F9CDD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCF621497441005F9CDD /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D9261FA9E7D296E15DAB3683 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD5EE14CAA0221F5C1A3C364 /* Pods_WehkampApp.framework */,
+				62BC0ECC5FF0DA5C40D450CC /* Pods_WehkampAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77EFDCDD21494BD2005F9CDD /* Build configuration list for PBXNativeTarget "WehkampApp" */;
 			buildPhases = (
+				098DCC9D6A2B7F2B7BCDBEE9 /* [CP] Check Pods Manifest.lock */,
 				77EFDCBC21494BD0005F9CDD /* Sources */,
 				77EFDCBD21494BD0005F9CDD /* Frameworks */,
 				77EFDCBE21494BD0005F9CDD /* Resources */,
+				32681CB74A10BFAA3461DCBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77EFDCE021494BD2005F9CDD /* Build configuration list for PBXNativeTarget "WehkampAppTests" */;
 			buildPhases = (
+				FB6F81B227D6E543C8A10528 /* [CP] Check Pods Manifest.lock */,
 				77EFDCD021494BD2005F9CDD /* Sources */,
 				77EFDCD121494BD2005F9CDD /* Frameworks */,
 				77EFDCD221494BD2005F9CDD /* Resources */,
+				5B0C03CF46F65115E0CBE066 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,13 +306,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		098DCC9D6A2B7F2B7BCDBEE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WehkampApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32681CB74A10BFAA3461DCBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WehkampApp/Pods-WehkampApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WehkampApp/Pods-WehkampApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B0C03CF46F65115E0CBE066 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WehkampAppTests/Pods-WehkampAppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WehkampAppTests/Pods-WehkampAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6F81B227D6E543C8A10528 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WehkampAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		77EFDCBC21494BD0005F9CDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EFDCC621494BD0005F9CDD /* ViewController.swift in Sources */,
+				77CD63C62149785400D396DA /* LoginViewController.swift in Sources */,
+				77EFDCF021497061005F9CDD /* Router.swift in Sources */,
+				77EFDCF9214974D7005F9CDD /* LoginViewModel.swift in Sources */,
+				77CD63CB2149851000D396DA /* PaddedTextField.swift in Sources */,
+				77EFDCE521495005005F9CDD /* ServerApiProtocol.swift in Sources */,
+				77EFDCE92149587C005F9CDD /* ServerApi.swift in Sources */,
+				77EFDCEE21496DB9005F9CDD /* WAError.swift in Sources */,
+				77EFDCEB21496990005F9CDD /* StorageManager.swift in Sources */,
 				77EFDCC421494BD0005F9CDD /* AppDelegate.swift in Sources */,
+				77EFDCF5214970DA005F9CDD /* AppControllerType.swift in Sources */,
+				77EFDCF32149709E005F9CDD /* Routable.swift in Sources */,
+				77EFDCE7214950AF005F9CDD /* ServerApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +579,13 @@
 		};
 		77EFDCDE21494BD2005F9CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B0AE957DB81F2EF72A8932A /* Pods-WehkampApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8535WZUPC;
 				INFOPLIST_FILE = WehkampApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,10 +599,13 @@
 		};
 		77EFDCDF21494BD2005F9CDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 084C1F0989C031A80B5F9671 /* Pods-WehkampApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8535WZUPC;
 				INFOPLIST_FILE = WehkampApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,6 +619,7 @@
 		};
 		77EFDCE121494BD2005F9CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6232952436EDE58C14921EB /* Pods-WehkampAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -410,6 +640,7 @@
 		};
 		77EFDCE221494BD2005F9CDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AD43D37AB214E74B148FAA1 /* Pods-WehkampAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
