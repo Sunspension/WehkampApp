@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77EFDCC421494BD0005F9CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCC321494BD0005F9CDD /* AppDelegate.swift */; };
+		77EFDCC621494BD0005F9CDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCC521494BD0005F9CDD /* ViewController.swift */; };
+		77EFDCC921494BD0005F9CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCC721494BD0005F9CDD /* Main.storyboard */; };
+		77EFDCCB21494BD1005F9CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCA21494BD1005F9CDD /* Assets.xcassets */; };
+		77EFDCCE21494BD1005F9CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCC21494BD1005F9CDD /* LaunchScreen.storyboard */; };
+		77EFDCD921494BD2005F9CDD /* WehkampAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77EFDCD521494BD2005F9CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EFDCB821494BD0005F9CDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77EFDCBF21494BD0005F9CDD;
+			remoteInfo = WehkampApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77EFDCC021494BD0005F9CDD /* WehkampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WehkampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77EFDCC321494BD0005F9CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		77EFDCC521494BD0005F9CDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77EFDCC821494BD0005F9CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77EFDCCA21494BD1005F9CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77EFDCCD21494BD1005F9CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77EFDCCF21494BD1005F9CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77EFDCD421494BD2005F9CDD /* WehkampAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WehkampAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WehkampAppTests.swift; sourceTree = "<group>"; };
+		77EFDCDA21494BD2005F9CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77EFDCBD21494BD0005F9CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77EFDCD121494BD2005F9CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77EFDCB721494BD0005F9CDD = {
+			isa = PBXGroup;
+			children = (
+				77EFDCC221494BD0005F9CDD /* WehkampApp */,
+				77EFDCD721494BD2005F9CDD /* WehkampAppTests */,
+				77EFDCC121494BD0005F9CDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77EFDCC121494BD0005F9CDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCC021494BD0005F9CDD /* WehkampApp.app */,
+				77EFDCD421494BD2005F9CDD /* WehkampAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77EFDCC221494BD0005F9CDD /* WehkampApp */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCC321494BD0005F9CDD /* AppDelegate.swift */,
+				77EFDCC521494BD0005F9CDD /* ViewController.swift */,
+				77EFDCC721494BD0005F9CDD /* Main.storyboard */,
+				77EFDCCA21494BD1005F9CDD /* Assets.xcassets */,
+				77EFDCCC21494BD1005F9CDD /* LaunchScreen.storyboard */,
+				77EFDCCF21494BD1005F9CDD /* Info.plist */,
+			);
+			path = WehkampApp;
+			sourceTree = "<group>";
+		};
+		77EFDCD721494BD2005F9CDD /* WehkampAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */,
+				77EFDCDA21494BD2005F9CDD /* Info.plist */,
+			);
+			path = WehkampAppTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77EFDCBF21494BD0005F9CDD /* WehkampApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77EFDCDD21494BD2005F9CDD /* Build configuration list for PBXNativeTarget "WehkampApp" */;
+			buildPhases = (
+				77EFDCBC21494BD0005F9CDD /* Sources */,
+				77EFDCBD21494BD0005F9CDD /* Frameworks */,
+				77EFDCBE21494BD0005F9CDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WehkampApp;
+			productName = WehkampApp;
+			productReference = 77EFDCC021494BD0005F9CDD /* WehkampApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77EFDCD321494BD2005F9CDD /* WehkampAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77EFDCE021494BD2005F9CDD /* Build configuration list for PBXNativeTarget "WehkampAppTests" */;
+			buildPhases = (
+				77EFDCD021494BD2005F9CDD /* Sources */,
+				77EFDCD121494BD2005F9CDD /* Frameworks */,
+				77EFDCD221494BD2005F9CDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77EFDCD621494BD2005F9CDD /* PBXTargetDependency */,
+			);
+			name = WehkampAppTests;
+			productName = WehkampAppTests;
+			productReference = 77EFDCD421494BD2005F9CDD /* WehkampAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77EFDCB821494BD0005F9CDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Vladimir Kokhanevich";
+				TargetAttributes = {
+					77EFDCBF21494BD0005F9CDD = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					77EFDCD321494BD2005F9CDD = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 77EFDCBF21494BD0005F9CDD;
+					};
+				};
+			};
+			buildConfigurationList = 77EFDCBB21494BD0005F9CDD /* Build configuration list for PBXProject "WehkampApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77EFDCB721494BD0005F9CDD;
+			productRefGroup = 77EFDCC121494BD0005F9CDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77EFDCBF21494BD0005F9CDD /* WehkampApp */,
+				77EFDCD321494BD2005F9CDD /* WehkampAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77EFDCBE21494BD0005F9CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77EFDCCE21494BD1005F9CDD /* LaunchScreen.storyboard in Resources */,
+				77EFDCCB21494BD1005F9CDD /* Assets.xcassets in Resources */,
+				77EFDCC921494BD0005F9CDD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77EFDCD221494BD2005F9CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77EFDCBC21494BD0005F9CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77EFDCC621494BD0005F9CDD /* ViewController.swift in Sources */,
+				77EFDCC421494BD0005F9CDD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77EFDCD021494BD2005F9CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77EFDCD921494BD2005F9CDD /* WehkampAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77EFDCD621494BD2005F9CDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77EFDCBF21494BD0005F9CDD /* WehkampApp */;
+			targetProxy = 77EFDCD521494BD2005F9CDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		77EFDCC721494BD0005F9CDD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77EFDCC821494BD0005F9CDD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		77EFDCCC21494BD1005F9CDD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77EFDCCD21494BD1005F9CDD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		77EFDCDB21494BD2005F9CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		77EFDCDC21494BD2005F9CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77EFDCDE21494BD2005F9CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WehkampApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.WehkampApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77EFDCDF21494BD2005F9CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WehkampApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.WehkampApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		77EFDCE121494BD2005F9CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WehkampAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.WehkampAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WehkampApp.app/WehkampApp";
+			};
+			name = Debug;
+		};
+		77EFDCE221494BD2005F9CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WehkampAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.WehkampAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WehkampApp.app/WehkampApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77EFDCBB21494BD0005F9CDD /* Build configuration list for PBXProject "WehkampApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77EFDCDB21494BD2005F9CDD /* Debug */,
+				77EFDCDC21494BD2005F9CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77EFDCDD21494BD2005F9CDD /* Build configuration list for PBXNativeTarget "WehkampApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77EFDCDE21494BD2005F9CDD /* Debug */,
+				77EFDCDF21494BD2005F9CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77EFDCE021494BD2005F9CDD /* Build configuration list for PBXNativeTarget "WehkampAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77EFDCE121494BD2005F9CDD /* Debug */,
+				77EFDCE221494BD2005F9CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77EFDCB821494BD0005F9CDD /* Project object */;
+}
