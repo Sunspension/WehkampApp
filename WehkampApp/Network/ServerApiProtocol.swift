@@ -11,5 +11,5 @@ import RxSwift
 
 protocol ServerApiProtocol {
     
-    func authorization(login: String, password: String) -> Single<String>
+    func authorization(login: String, password: String) -> Single<Token>
 }

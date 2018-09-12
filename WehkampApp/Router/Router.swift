@@ -11,18 +11,28 @@ import Swinject
 
 class Router: Routable {
     
-    private (set) var container = Container()
+    private let _container = Container()
     
     private let _storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
     
     init() {
         
-        container.register(LoginViewController.self) { _ in
+        _container.register(StorageManagable.self, factory: { _ in StorageManager() })
+        
+        _container.register(ServerApiProtocol.self) { resolver in
             
-            let controller = self._storyBoard.instantiateViewController(withIdentifier: "Login")
-                as! LoginViewController
-            let viewModel = LoginViewModel()
+            let storage = resolver.resolve(StorageManagable.self)!
+            return ServerApi(storgeManager: storage)
+        }
+        
+        _container.register(LoginViewController.self) { resolver in
+            
+            let controller = self._storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            let api = resolver.resolve(ServerApiProtocol.self)!
+            let storage = resolver.resolve(StorageManagable.self)!
+            let viewModel = LoginViewModel(api: api, storage: storage)
+            viewModel.router = LoginRouter(view: controller, self)
             controller.viewModel = viewModel
             
             return controller
@@ -34,8 +44,11 @@ class Router: Routable {
         switch type {
             
         case .root:
-            let controller = container.resolve(LoginViewController.self)!
+            let controller = _container.resolve(LoginViewController.self)!
             return UINavigationController(rootViewController: controller)
+            
+        case .products:
+            return UIViewController()
         }
     }
 }

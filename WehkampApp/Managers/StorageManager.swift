@@ -16,7 +16,11 @@ private enum KeychainKeys: String {
 
 protocol StorageManagable {
     
+    func saveToken(_ token: String)
+    
     func jwToken() -> String
+    
+    func deleteToken()
 }
 
 struct StorageManager {
@@ -29,5 +33,15 @@ extension StorageManager: StorageManagable {
     func jwToken() -> String {
         
         return keychain[KeychainKeys.token.rawValue] ?? ""
+    }
+    
+    func saveToken(_ token: String) {
+        
+        keychain[KeychainKeys.token.rawValue] = token
+    }
+    
+    func deleteToken() {
+        
+        try? keychain.remove(KeychainKeys.token.rawValue)
     }
 }

@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
 
+    private let _bag = DisposeBag()
+    
     @IBOutlet private weak var userName: PaddedTextField!
     
     @IBOutlet private weak var password: PaddedTextField!
@@ -25,6 +29,7 @@ class LoginViewController: UIViewController {
         
         navigationItem.title = "Login"
         setupView()
+        setupViewModel()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -41,5 +46,15 @@ class LoginViewController: UIViewController {
         userName.layer.cornerRadius = userName.bounds.height / 2
         userName.clipsToBounds = true
         login.layer.cornerRadius = login.bounds.height / 2
+    }
+    
+    private func setupViewModel() {
+        
+        viewModel.password = password.rx.text.orEmpty.asObservable()
+        viewModel.userName = userName.rx.text.orEmpty.asObservable()
+        viewModel.loginAction = login.rx.tap
+            .map({ [unowned self] in self.view.endEditing(true) })
+            .asObservable()
+        viewModel.isCanLogin.bind(to: login.rx.isEnabled).disposed(by: _bag)
     }
 }

@@ -8,7 +8,37 @@
 
 import Foundation
 
+struct ServerError: Decodable {
+    
+    let key: String
+    let message: String
+}
+
+extension ServerError: CustomStringConvertible {
+    
+    var description: String {
+        
+        return "Server Error - reason: " + key + "\nmessage: " + message + "\n"
+    }
+}
+
 enum WAError: Swift.Error {
     
-    case unauthorize
+    case serverError(error: ServerError),
+    any(message: String)
+}
+
+extension WAError: LocalizedError {
+    
+    var localizedDescription: String {
+        
+        switch self {
+            
+        case .any(let message):
+            return message
+            
+        case .serverError(let error):
+            return error.message
+        }
+    }
 }

@@ -28,8 +28,9 @@ class ServerApi {
 
 extension ServerApi: ServerApiProtocol {
     
-    func authorization(login: String, password: String) -> Single<String> {
+    func authorization(login: String, password: String) -> Single<Token> {
         
-        return Single.just("")
+        let login = ServerApiService.login(login: login, password: password)
+        return provider.rx.request(login).mapResponse(Token.self)
     }
 }

@@ -73,7 +73,7 @@ extension ServerApiService: TargetType {
     
     var task: Task {
         
-        return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
     }
     
     var headers: [String : String]? {
