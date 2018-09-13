@@ -12,4 +12,6 @@ import RxSwift
 protocol ServerApiProtocol {
     
     func authorization(login: String, password: String) -> Single<Token>
+    
+    func basket() -> Single<[Product]>
 }

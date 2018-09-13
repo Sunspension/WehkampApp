@@ -16,7 +16,8 @@ class ServerApi {
     
     private lazy var provider: MoyaProvider<ServerApiService> = {
         
-        let plugins: [PluginType] = [NetworkLoggerPlugin(verbose: true), AccessTokenPlugin(tokenClosure: self._storage.jwToken())]
+        let plugins: [PluginType] = [NetworkLoggerPlugin(verbose: true),
+                                     AccessTokenPlugin(tokenClosure: self._storage.jwToken())]
         return MoyaProvider<ServerApiService>(plugins: plugins)
     }()
     
@@ -32,5 +33,11 @@ extension ServerApi: ServerApiProtocol {
         
         let login = ServerApiService.login(login: login, password: password)
         return provider.rx.request(login).mapResponse(Token.self)
+    }
+    
+    func basket() -> Single<[Product]> {
+        
+        return provider.rx.request(.basket)
+            .mapResponse([Product].self, atKeyPath: "basket_items")
     }
 }

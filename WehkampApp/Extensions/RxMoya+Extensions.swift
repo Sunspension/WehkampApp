@@ -21,13 +21,11 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                 if let response = try? res.map(type, atKeyPath: keyPath, using: JSONDecoder(), failsOnEmptyData: true) {
                     
                     event(.success(response))
-                    debugPrint(response)
                 }
                 else {
                     
                     let error = self.handleError(res)
                     event(.error(error))
-                    debugPrint(error)
                 }
                 
                 return Disposables.create()

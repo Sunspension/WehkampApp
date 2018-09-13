@@ -12,17 +12,29 @@ import Moya
 enum ServerApiService {
     
     case login(login: String, password: String)
+    
+    case basket
 }
 
 extension ServerApiService {
     
     var parameters: [String : Any] {
         
+        var params = [String : Any]()
+        
         switch self {
             
         case .login(let login, let password):
-            return ["username" : login, "password" : password]
+            
+            params["username"] = login
+            params["password"] = password
+            break
+            
+        default:
+            break
         }
+        
+        return params
     }
 }
 
@@ -54,6 +66,9 @@ extension ServerApiService: TargetType {
             
         case .login:
             return "/authentication/api"
+            
+        case .basket:
+            return "/service/basket/basket"
         }
     }
     
@@ -63,6 +78,9 @@ extension ServerApiService: TargetType {
             
         case .login:
             return .post
+            
+        case .basket:
+            return .get
         }
     }
     

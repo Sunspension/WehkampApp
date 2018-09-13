@@ -11,6 +11,7 @@ import Foundation
 struct ServerError: Decodable {
     
     let key: String
+    
     let message: String
 }
 
@@ -22,15 +23,15 @@ extension ServerError: CustomStringConvertible {
     }
 }
 
-enum WAError: Swift.Error {
+enum WAError: Error {
     
     case serverError(error: ServerError),
     any(message: String)
 }
 
 extension WAError: LocalizedError {
-    
-    var localizedDescription: String {
+
+    var errorDescription: String? {
         
         switch self {
             

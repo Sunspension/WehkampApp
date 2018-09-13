@@ -52,9 +52,11 @@ class LoginViewController: UIViewController {
         
         viewModel.password = password.rx.text.orEmpty.asObservable()
         viewModel.userName = userName.rx.text.orEmpty.asObservable()
+
         viewModel.loginAction = login.rx.tap
             .map({ [unowned self] in self.view.endEditing(true) })
             .asObservable()
+
         viewModel.isCanLogin.bind(to: login.rx.isEnabled).disposed(by: _bag)
     }
 }

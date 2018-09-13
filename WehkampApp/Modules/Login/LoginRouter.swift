@@ -33,7 +33,7 @@ extension LoginRouter: LoginRoutable {
     
     func onSuccessLogin() {
         
-        let controller = _router.controller(.products)
+        let controller = _router.controller(.basket)
         _view?.navigationController?.setViewControllers([controller], animated: true)
     }
     

@@ -37,6 +37,20 @@ class Router: Routable {
             
             return controller
         }
+        
+        _container.register(BasketViewController.self) { resolver in
+            
+            let controller = BasketViewController(style: .plain)
+            let api = resolver.resolve(ServerApiProtocol.self)!
+            let viewModel = BasketViewModel(api: api)
+            let storage = resolver.resolve(StorageManagable.self)!
+            let router = BasketRouter(view: controller, router: self, storage: storage)
+            
+            viewModel.router = router
+            controller.viewModel = viewModel
+            
+            return controller
+        }
     }
     
     func controller(_ type: AppControllerType) -> UIViewController {
@@ -44,11 +58,26 @@ class Router: Routable {
         switch type {
             
         case .root:
-            let controller = _container.resolve(LoginViewController.self)!
-            return UINavigationController(rootViewController: controller)
             
-        case .products:
-            return UIViewController()
+            let storage = _container.resolve(StorageManagable.self)!
+            
+            if storage.jwToken().isEmpty {
+                
+                let controller = _container.resolve(LoginViewController.self)!
+                return UINavigationController(rootViewController: controller)
+            }
+            else {
+                
+                let controller = _container.resolve(BasketViewController.self)!
+                return UINavigationController(rootViewController: controller)
+            }
+            
+            
+        case .login:
+            return _container.resolve(LoginViewController.self)!
+            
+        case .basket:
+            return _container.resolve(BasketViewController.self)!
         }
     }
 }

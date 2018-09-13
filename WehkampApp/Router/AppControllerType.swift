@@ -10,5 +10,5 @@ import Foundation
 
 enum AppControllerType {
     
-    case root, products
+    case root, basket, login
 }

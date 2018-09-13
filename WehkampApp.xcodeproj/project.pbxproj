@@ -12,6 +12,8 @@
 		771C54D32149BF1B00B023C5 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C54D22149BF1B00B023C5 /* UIViewController+Extensions.swift */; };
 		7785143D21499C9300A2B1D8 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785143C21499C9300A2B1D8 /* Token.swift */; };
 		7785143F21499D4A00A2B1D8 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785143E21499D4A00A2B1D8 /* LoginRouter.swift */; };
+		779616C7214B0B780003C4B7 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779616C5214B0B780003C4B7 /* ProductCell.swift */; };
+		779616C8214B0B780003C4B7 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779616C6214B0B780003C4B7 /* ProductCell.xib */; };
 		77CD63C62149785400D396DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63C52149785400D396DA /* LoginViewController.swift */; };
 		77CD63CB2149851000D396DA /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63CA2149851000D396DA /* PaddedTextField.swift */; };
 		77EFDCC421494BD0005F9CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCC321494BD0005F9CDD /* AppDelegate.swift */; };
@@ -28,6 +30,11 @@
 		77EFDCF32149709E005F9CDD /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCF22149709E005F9CDD /* Routable.swift */; };
 		77EFDCF5214970DA005F9CDD /* AppControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCF4214970DA005F9CDD /* AppControllerType.swift */; };
 		77EFDCF9214974D7005F9CDD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCF8214974D7005F9CDD /* LoginViewModel.swift */; };
+		77F1413F214ADCF500FAC36A /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1413E214ADCF500FAC36A /* BasketViewController.swift */; };
+		77F14141214ADD2100FAC36A /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F14140214ADD2100FAC36A /* BasketViewModel.swift */; };
+		77F14144214ADDA800FAC36A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F14143214ADDA800FAC36A /* Product.swift */; };
+		77F14146214AFB1900FAC36A /* BasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F14145214AFB1900FAC36A /* BasketRouter.swift */; };
+		77F14148214B01BC00FAC36A /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F14147214B01BC00FAC36A /* Decodable+Extensions.swift */; };
 		93254CC0A9F15A01D30D46DD /* Pods_WehkampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5EE14CAA0221F5C1A3C364 /* Pods_WehkampApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +57,8 @@
 		771C54D22149BF1B00B023C5 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7785143C21499C9300A2B1D8 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7785143E21499D4A00A2B1D8 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		779616C5214B0B780003C4B7 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		779616C6214B0B780003C4B7 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		77CD63C52149785400D396DA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77CD63CA2149851000D396DA /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		77EFDCC021494BD0005F9CDD /* WehkampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WehkampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +79,11 @@
 		77EFDCF22149709E005F9CDD /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		77EFDCF4214970DA005F9CDD /* AppControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControllerType.swift; sourceTree = "<group>"; };
 		77EFDCF8214974D7005F9CDD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		77F1413E214ADCF500FAC36A /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		77F14140214ADD2100FAC36A /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
+		77F14143214ADDA800FAC36A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		77F14145214AFB1900FAC36A /* BasketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRouter.swift; sourceTree = "<group>"; };
+		77F14147214B01BC00FAC36A /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
 		CD5EE14CAA0221F5C1A3C364 /* Pods_WehkampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WehkampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6232952436EDE58C14921EB /* Pods-WehkampAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WehkampAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WehkampAppTests/Pods-WehkampAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +124,7 @@
 			children = (
 				771C54D02149B80A00B023C5 /* RxMoya+Extensions.swift */,
 				771C54D22149BF1B00B023C5 /* UIViewController+Extensions.swift */,
+				77F14147214B01BC00FAC36A /* Decodable+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -120,6 +135,16 @@
 				7785143C21499C9300A2B1D8 /* Token.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		779616C4214B0B550003C4B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77F1413E214ADCF500FAC36A /* BasketViewController.swift */,
+				779616C5214B0B780003C4B7 /* ProductCell.swift */,
+				779616C6214B0B780003C4B7 /* ProductCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		77CD63CC2149851700D396DA /* Views */ = {
@@ -220,9 +245,29 @@
 		77EFDCF721497449005F9CDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				77F1413D214ADCBD00FAC36A /* Basket */,
 				77EFDCF621497441005F9CDD /* Login */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		77F1413D214ADCBD00FAC36A /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				779616C4214B0B550003C4B7 /* Views */,
+				77F14142214ADD9900FAC36A /* Models */,
+				77F14140214ADD2100FAC36A /* BasketViewModel.swift */,
+				77F14145214AFB1900FAC36A /* BasketRouter.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		77F14142214ADD9900FAC36A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				77F14143214ADDA800FAC36A /* Product.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D9261FA9E7D296E15DAB3683 /* Frameworks */ = {
@@ -320,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77EFDCCE21494BD1005F9CDD /* LaunchScreen.storyboard in Resources */,
+				779616C8214B0B780003C4B7 /* ProductCell.xib in Resources */,
 				77EFDCCB21494BD1005F9CDD /* Assets.xcassets in Resources */,
 				77EFDCC921494BD0005F9CDD /* Main.storyboard in Resources */,
 			);
@@ -361,6 +407,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WehkampApp/Pods-WehkampApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -371,6 +418,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -394,7 +442,6 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
@@ -404,7 +451,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
@@ -438,9 +484,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F1413F214ADCF500FAC36A /* BasketViewController.swift in Sources */,
+				779616C7214B0B780003C4B7 /* ProductCell.swift in Sources */,
 				77CD63C62149785400D396DA /* LoginViewController.swift in Sources */,
 				77EFDCF021497061005F9CDD /* Router.swift in Sources */,
 				77EFDCF9214974D7005F9CDD /* LoginViewModel.swift in Sources */,
+				77F14148214B01BC00FAC36A /* Decodable+Extensions.swift in Sources */,
+				77F14141214ADD2100FAC36A /* BasketViewModel.swift in Sources */,
+				77F14144214ADDA800FAC36A /* Product.swift in Sources */,
 				77CD63CB2149851000D396DA /* PaddedTextField.swift in Sources */,
 				77EFDCE521495005005F9CDD /* ServerApiProtocol.swift in Sources */,
 				77EFDCE92149587C005F9CDD /* ServerApi.swift in Sources */,
@@ -451,6 +502,7 @@
 				77EFDCF32149709E005F9CDD /* Routable.swift in Sources */,
 				7785143D21499C9300A2B1D8 /* Token.swift in Sources */,
 				771C54D32149BF1B00B023C5 /* UIViewController+Extensions.swift in Sources */,
+				77F14146214AFB1900FAC36A /* BasketRouter.swift in Sources */,
 				7785143F21499D4A00A2B1D8 /* LoginRouter.swift in Sources */,
 				77EFDCE7214950AF005F9CDD /* ServerApiService.swift in Sources */,
 				771C54D12149B80A00B023C5 /* RxMoya+Extensions.swift in Sources */,
