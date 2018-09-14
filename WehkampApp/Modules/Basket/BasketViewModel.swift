@@ -8,12 +8,17 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
+
+let deleteItemNotification = "WADeleteItemNotification"
 
 class BasketViewModel {
     
     private let _bag = DisposeBag()
     
     private let _api: ServerApiProtocol
+    
+    private let _deleteItemAction = PublishRelay<IndexPath>()
     
     var logoutAction = Observable.just(()) {
         
@@ -25,12 +30,18 @@ class BasketViewModel {
         didSet { setupAddItemAction()  }
     }
     
+    var deleteItemAction: Observable<IndexPath> {
+        
+        return _deleteItemAction.asObservable()
+    }
+    
     var router: BasketRoutable?
     
     
     init(api: ServerApiProtocol) {
         
         _api = api
+        setupNotificationHandler()
     }
     
     
@@ -59,5 +70,17 @@ class BasketViewModel {
         addItemAction
             .bind { [unowned self] _ in self.router?.addItemController() }
             .disposed(by: _bag)
+    }
+    
+    private func setupNotificationHandler() {
+        
+        let name = Notification.Name(deleteItemNotification)
+        NotificationCenter.default.rx
+            .notification(name).bind { [unowned self] notification in
+                
+                let indexPath = notification.object as! IndexPath
+                self._deleteItemAction.accept(indexPath)
+        
+            }.disposed(by: _bag)
     }
 }

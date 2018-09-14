@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Moya
 
 protocol ServerApiProtocol {
     
@@ -16,4 +17,8 @@ protocol ServerApiProtocol {
     func basket() -> Single<[Product]>
     
     func updateItemsCount(id: String, count: Int) -> Single<Product>
+    
+    func deleteItem(id: String) -> Single<Response>
+    
+    func addItem(productNumber: String, sizeCode: Int, count: Int) -> Single<Response>
 }

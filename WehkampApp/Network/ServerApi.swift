@@ -46,4 +46,15 @@ extension ServerApi: ServerApiProtocol {
         let addItem = ServerApiService.updateItemsCount(id: id, count: count)
         return provider.rx.request(addItem).mapResponse(Product.self)
     }
+    
+    func deleteItem(id: String) -> Single<Response> {
+        
+        return provider.rx.request(.delete(id: id))
+    }
+    
+    func addItem(productNumber: String, sizeCode: Int, count: Int) -> Single<Response> {
+        
+        let addItem = ServerApiService.addItem(productNumber: productNumber, sizeCode: sizeCode, count: count)
+        return provider.rx.request(addItem)
+    }
 }

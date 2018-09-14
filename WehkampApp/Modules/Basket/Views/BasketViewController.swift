@@ -11,9 +11,16 @@ import RxSwift
 
 class BasketViewController: UITableViewController {
 
-    private var dataSource = [ProductViewModel]()
+    private var _items = [ProductViewModel]()
     
     private let _bag = DisposeBag()
+    
+    private lazy var _refresh: UIRefreshControl = {
+        
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(self.requestBasket), for: .valueChanged)
+        return control
+    }()
     
     var viewModel: BasketViewModel!
     
@@ -25,6 +32,8 @@ class BasketViewController: UITableViewController {
         
         setupNavigationItem()
         setupTableView()
+        setupRefresh()
+        setupViewModel()
         requestBasket()
     }
 
@@ -32,9 +41,24 @@ class BasketViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return dataSource.count
+        return _items.count
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductCell
+        let product = _items[indexPath.row]
+        cell.configure(product, indexPath)
+        
+        return cell
+    }
+    
+    // MARK: - ScrollView delegate
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if _refresh.isRefreshing { self.requestBasket() }
+    }
     
     // MARK: - Private methods
     
@@ -46,7 +70,7 @@ class BasketViewController: UITableViewController {
         navigationItem.leftBarButtonItem = logout
         
         let addItem = UIBarButtonItem()
-        addItem.title = "AddItem"
+        addItem.title = "Add"
         viewModel.addItemAction = addItem.rx.tap.asObservable()
         navigationItem.rightBarButtonItem = addItem
     }
@@ -58,75 +82,54 @@ class BasketViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         tableView.tableFooterView = UIView()
-        tableView.register(UINib(nibName: String(describing: ProductCell.self), bundle: nil), forCellReuseIdentifier: "cell")
+        
+        let nib = UINib(nibName: String(describing: ProductCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
     }
     
-    private func requestBasket() {
+    private func setupRefresh() {
+        
+        if #available(iOS 10.0, *) {
+            
+            self.tableView.refreshControl = _refresh
+        }
+        else {
+            
+            self.refreshControl = _refresh
+        }
+    }
+    
+    private func setupViewModel() {
+        
+        viewModel.deleteItemAction.bind { [unowned self] indexPath in
+            
+            self._items.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            }.disposed(by: _bag)
+    }
+    
+    @objc private func requestBasket() {
+        
+        if self.tableView.isDragging { return }
         
         viewModel.requestBasket()
-            .subscribe(onNext: { [weak self] in self?.updateDataSource($0) }, onError: { debugPrint($0) })
+            .subscribe(onNext: { [weak self] in
+                
+                self?._refresh.endRefreshing()
+                self?.updateDataSource($0)
+                
+                }, onError: { [weak self] in
+                    
+                    self?._refresh.endRefreshing()
+                    debugPrint($0)
+            })
             .disposed(by: _bag)
     }
     
     private func updateDataSource(_ items: [ProductViewModel]) {
         
-        dataSource = items
+        _items = items
         tableView.reloadData()
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductCell
-        let product = dataSource[indexPath.row]
-        cell.configure(product)
-
-        return cell
-    }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

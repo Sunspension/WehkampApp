@@ -13,7 +13,7 @@ import RxCocoa
 
 class ProductCell: UITableViewCell {
 
-    private let _bag = DisposeBag()
+    private var _bag = DisposeBag()
     
     @IBOutlet private weak var productImage: UIImageView!
     
@@ -41,6 +41,16 @@ class ProductCell: UITableViewCell {
         
         backgroundColor = .background
         container.layer.cornerRadius = 20
+        setupShadow()
+    }
+    
+    override func prepareForReuse() {
+        
+        _bag = DisposeBag()
+        setupShadow()
+    }
+    
+    private func setupShadow() {
         
         container.addShadow(offset: CGSize(width: 0, height: 5), radius: 8, opacity: 0.1)
         container.rx.observe(CGRect.self, "bounds")
@@ -57,7 +67,7 @@ class ProductCell: UITableViewCell {
 
 extension ProductCell {
     
-    func configure(_ viewModel: ProductViewModel) {
+    func configure(_ viewModel: ProductViewModel, _ indexPath: IndexPath) {
         
         productName.text = viewModel.productName
         availability.text = viewModel.availability
@@ -73,7 +83,8 @@ extension ProductCell {
         // viewModel
         viewModel.plusItem = plus.rx.tap.asDriver()
         viewModel.minusItem = minus.rx.tap.asDriver()
-        viewModel.deleteItem = delete.rx.tap.asDriver()
+        viewModel.deleteItem = delete.rx.tap.asObservable()
+            .flatMap({ Observable.just(indexPath) })
         viewModel.count.bind(to: count.rx.text).disposed(by: _bag)
         viewModel.price.bind(to: price.rx.text).disposed(by: _bag)
     }

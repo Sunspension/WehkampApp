@@ -16,6 +16,10 @@ enum ServerApiService {
     case basket
     
     case updateItemsCount(id: String, count: Int)
+    
+    case delete(id: String)
+    
+    case addItem(productNumber: String, sizeCode: Int, count: Int)
 }
 
 extension ServerApiService {
@@ -33,7 +37,16 @@ extension ServerApiService {
             break
             
         case .updateItemsCount(_, let count):
+            
             params["number_of_items"] = count
+            break
+            
+        case .addItem(let productNumber, let sizeCode, let count):
+            
+            params["product_number"] = productNumber
+            params["size_code"] = sizeCode
+            params["number_of_products"] = count
+            break
             
         default:
             break
@@ -77,6 +90,12 @@ extension ServerApiService: TargetType {
             
         case .updateItemsCount(let id, _):
             return "/service/basket/basket/items/\(id)"
+            
+        case .delete(let id):
+            return "service/basket/basket/items/\(id)"
+            
+        case .addItem:
+            return "/service/basket/basket/items"
         }
     }
     
@@ -84,7 +103,7 @@ extension ServerApiService: TargetType {
         
         switch self {
             
-        case .login:
+        case .login, .addItem:
             return .post
             
         case .updateItemsCount:
@@ -92,6 +111,9 @@ extension ServerApiService: TargetType {
             
         case .basket:
             return .get
+            
+        case .delete:
+            return .delete
         }
     }
     

@@ -106,6 +106,7 @@
                             <constraint firstItem="j5e-v8-fC9" firstAttribute="centerY" secondItem="4Bi-8D-7o0" secondAttribute="centerY" id="CdO-WA-qVH"/>
                             <constraint firstAttribute="trailing" secondItem="lbj-Ti-Rwe" secondAttribute="trailing" constant="16" id="FVg-ga-Dgx"/>
                             <constraint firstItem="9Xq-OG-JNx" firstAttribute="leading" secondItem="4af-Lv-QJp" secondAttribute="leading" constant="16" id="JFt-xw-SzV"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="Nje-3p-yBZ"/>
                             <constraint firstItem="X03-C1-Gj0" firstAttribute="leading" secondItem="a0e-5a-ORF" secondAttribute="trailing" constant="4" id="PXs-8W-cjE"/>
                             <constraint firstAttribute="trailing" secondItem="X03-C1-Gj0" secondAttribute="trailing" constant="8" id="XWz-Jz-pXL"/>
                             <constraint firstItem="a0e-5a-ORF" firstAttribute="leading" secondItem="9Xq-OG-JNx" secondAttribute="trailing" constant="16" id="Y9N-rC-BZE"/>
@@ -129,10 +130,9 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="4af-Lv-QJp" secondAttribute="bottom" constant="16" id="6iw-ZC-a3k"/>
                     <constraint firstItem="4af-Lv-QJp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="SDg-OJ-Hww"/>
-                    <constraint firstItem="4af-Lv-QJp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="WCe-fl-Ut1"/>
-                    <constraint firstAttribute="trailing" secondItem="4af-Lv-QJp" secondAttribute="trailing" constant="16" id="dIZ-is-Qtw"/>
-                    <constraint firstAttribute="trailing" secondItem="4af-Lv-QJp" secondAttribute="trailing" constant="16" id="dba-6y-zaj"/>
-                    <constraint firstItem="4af-Lv-QJp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="p4I-PG-5jA"/>
+                    <constraint firstAttribute="trailing" secondItem="4af-Lv-QJp" secondAttribute="trailing" priority="750" constant="16" id="dIZ-is-Qtw"/>
+                    <constraint firstItem="4af-Lv-QJp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="750" constant="16" id="p4I-PG-5jA"/>
+                    <constraint firstItem="4af-Lv-QJp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="pcL-hB-0GK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

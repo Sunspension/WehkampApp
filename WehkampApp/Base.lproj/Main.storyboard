@@ -29,7 +29,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="729-eV-xrj" customClass="PaddedTextField" customModule="WehkampApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="66" width="343" height="50"/>
@@ -39,7 +39,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rT-c1-AKJ">
                                         <rect key="frame" x="0.0" y="132" width="343" height="50"/>
@@ -53,13 +53,17 @@
                                         </state>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="dUP-qK-pDB"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vPw-bM-9We" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1YS-a7-qKR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vPw-bM-9We" secondAttribute="trailing" constant="16" id="tCY-F1-CYv"/>
-                            <constraint firstItem="vPw-bM-9We" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uwZ-8c-q32"/>
+                            <constraint firstItem="vPw-bM-9We" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IsU-yS-0l2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vPw-bM-9We" secondAttribute="trailing" priority="750" constant="16" id="tCY-F1-CYv"/>
+                            <constraint firstItem="vPw-bM-9We" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="750" constant="16" id="uwZ-8c-q32"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

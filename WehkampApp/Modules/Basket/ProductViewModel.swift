@@ -32,9 +32,9 @@ class ProductViewModel {
         didSet { setupMinusItem() }
     }
     
-    var deleteItem = Driver.just(()) {
+    var deleteItem = Observable.just(IndexPath()) {
         
-        didSet { setupRemoveItem() }
+        didSet { setupDeleteItem() }
     }
     
     var productName: String {
@@ -92,9 +92,22 @@ class ProductViewModel {
         }).disposed(by: _bag)
     }
     
-    private func setupRemoveItem() {
+    private func setupDeleteItem() {
         
+        deleteItem
+            .asObservable()
+            .map({ [unowned self] indexPath in
+                
+                self.deleteItemAction()
+                self.notifyAboutDelete(indexPath)
+            })
+            .subscribe()
+            .disposed(by: _bag)
+    }
+    
+    private func deleteItemAction() {
         
+        _api.deleteItem(id: _product.id).subscribe().disposed(by: _bag)
     }
     
     private func updateItemsCount(_ count: Int) {
@@ -104,11 +117,6 @@ class ProductViewModel {
             .filter({ !$0.id.isEmpty })
             .subscribe(onSuccess: { [weak self] in self?.handleUpdatedProduct($0) }, onError: { debugPrint($0) })
             .disposed(by: _bag)
-    }
-    
-    private func removeItemFromRemoteBasket() {
-        
-        
     }
     
     private func handleUpdatedProduct(_ product: Product) {
@@ -128,5 +136,12 @@ class ProductViewModel {
     private func setCount() {
         
         _count.onNext(String(_product.count))
+    }
+    
+    private func notifyAboutDelete(_ indexPath: IndexPath) {
+        
+        let name = Notification.Name(deleteItemNotification)
+        let notification = Notification(name: name, object: indexPath)
+        NotificationCenter.default.post(notification)
     }
 }
