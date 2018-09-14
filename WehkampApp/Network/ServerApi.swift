@@ -40,4 +40,10 @@ extension ServerApi: ServerApiProtocol {
         return provider.rx.request(.basket)
             .mapResponse([Product].self, atKeyPath: "basket_items")
     }
+    
+    func updateItemsCount(id: String, count: Int) -> Single<Product> {
+        
+        let addItem = ServerApiService.updateItemsCount(id: id, count: count)
+        return provider.rx.request(addItem).mapResponse(Product.self)
+    }
 }

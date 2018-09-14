@@ -11,7 +11,7 @@ import RxSwift
 
 class BasketViewController: UITableViewController {
 
-    private let dataSource = [Product]()
+    private var dataSource = [ProductViewModel]()
     
     private let _bag = DisposeBag()
     
@@ -24,13 +24,8 @@ class BasketViewController: UITableViewController {
         title = "Basket"
         
         setupNavigationItem()
+        setupTableView()
         requestBasket()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -48,7 +43,22 @@ class BasketViewController: UITableViewController {
         let logout = UIBarButtonItem()
         logout.title = "Logout"
         viewModel.logoutAction = logout.rx.tap.asObservable()
-        navigationItem.rightBarButtonItem = logout
+        navigationItem.leftBarButtonItem = logout
+        
+        let addItem = UIBarButtonItem()
+        addItem.title = "AddItem"
+        viewModel.addItemAction = addItem.rx.tap.asObservable()
+        navigationItem.rightBarButtonItem = addItem
+    }
+    
+    private func setupTableView() {
+        
+        tableView.backgroundColor = .background
+        tableView.separatorStyle = .none
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: String(describing: ProductCell.self), bundle: nil), forCellReuseIdentifier: "cell")
     }
     
     private func requestBasket() {
@@ -58,20 +68,21 @@ class BasketViewController: UITableViewController {
             .disposed(by: _bag)
     }
     
-    private func updateDataSource(_ items: [Product]) {
+    private func updateDataSource(_ items: [ProductViewModel]) {
         
-        
+        dataSource = items
+        tableView.reloadData()
     }
     
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductCell
+        let product = dataSource[indexPath.row]
+        cell.configure(product)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

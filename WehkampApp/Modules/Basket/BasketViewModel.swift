@@ -20,6 +20,11 @@ class BasketViewModel {
         didSet { setupLogoutAction()  }
     }
     
+    var addItemAction = Observable.just(()) {
+        
+        didSet { setupAddItemAction()  }
+    }
+    
     var router: BasketRoutable?
     
     
@@ -29,15 +34,30 @@ class BasketViewModel {
     }
     
     
-    func requestBasket() -> Observable<[Product]> {
+    func requestBasket() -> Observable<[ProductViewModel]> {
         
-        return _api.basket().asObservable()
+        return _api.basket()
+            .asObservable()
+            .flatMap({ [weak self] in self?.createProductViewModels($0) ?? Observable.just([ProductViewModel]()) })
+    }
+    
+    private func createProductViewModels(_ products: [Product]) -> Observable<[ProductViewModel]> {
+        
+        let viewModels = products.map { ProductViewModel(product: $0, api: _api) }
+        return Observable.just(viewModels)
     }
     
     private func setupLogoutAction() {
         
         logoutAction
             .bind { [unowned self] _ in self.router?.logout() }
+            .disposed(by: _bag)
+    }
+    
+    private func setupAddItemAction() {
+        
+        addItemAction
+            .bind { [unowned self] _ in self.router?.addItemController() }
             .disposed(by: _bag)
     }
 }

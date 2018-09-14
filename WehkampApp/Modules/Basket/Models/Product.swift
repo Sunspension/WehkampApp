@@ -14,38 +14,52 @@ private enum CodingKeys: String, CodingKey {
     number = "product_number",
     count = "number_of_products",
     name = "title",
+    availability = "availability_text",
     price = "original_price",
-    imageUrl = "url",
-    alternateUrls = "alternate_urls"
+    normalizedName = "normalized_name",
+    alternateUrls = "alternate_urls",
+    size = "size",
+    maxCount = "max_items_in_basket"
 }
 
-struct Product: Decodable {
+final class Product: Decodable {
     
-    let id: String
+    var id = ""
     
-    let count: Int
+    var count = 0
     
-    let number: String
+    var maxCount = 0
     
-    let name: String
+    var number = ""
     
-    let price: Double
+    var name = ""
     
-    let imageUrlString: String?
+    var availability = ""
+    
+    var price = 0.0
+    
+    var sizeCode = ""
+    
+    var normalizedName = ""
     
     
-    init(from decoder: Decoder) throws {
+    init() {}
+    
+    required init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         id = try values.decode(String.self, forKey: .id)
         count = try values.decode(Int.self, forKey: .count)
+        maxCount = try values.decode(Int.self, forKey: .maxCount)
         number = try values.decode(String.self, forKey: .number)
         name = try values.decode(String.self, forKey: .name)
         price = try values.decode(Double.self, forKey: .price)
+        availability = try values.decode(String.self, forKey: .availability)
+        normalizedName = try values.decode(String.self, forKey: .normalizedName)
         
-        let alternate = try values.decode([Any].self, forKey: .alternateUrls) as! [[String : Any]]
-        imageUrlString = alternate.first?["url"] as? String
+        let size = try values.decode([String : Any].self, forKey: .size)
+        sizeCode = size["code"] as! String
     }
 }
 
@@ -53,7 +67,7 @@ extension Product: CustomStringConvertible {
     
     var description: String {
         
-        return "number: \(number) name: \(name) price: \(price) count: \(count) image: \(imageUrlString ?? "")"
+        return "number: \(number) name: \(name) price: \(price) count: \(count))"
     }
 }
 

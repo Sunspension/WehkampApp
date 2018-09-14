@@ -16,6 +16,9 @@
 		779616C8214B0B780003C4B7 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779616C6214B0B780003C4B7 /* ProductCell.xib */; };
 		77CD63C62149785400D396DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63C52149785400D396DA /* LoginViewController.swift */; };
 		77CD63CB2149851000D396DA /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63CA2149851000D396DA /* PaddedTextField.swift */; };
+		77E5DB55214C066D0011F938 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5DB54214C066D0011F938 /* ProductViewModel.swift */; };
+		77E5DB57214C1CC00011F938 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5DB56214C1CC00011F938 /* UIColor+Extensions.swift */; };
+		77E5DB59214C1E520011F938 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5DB58214C1E520011F938 /* UIView+Extensions.swift */; };
 		77EFDCC421494BD0005F9CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCC321494BD0005F9CDD /* AppDelegate.swift */; };
 		77EFDCC921494BD0005F9CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCC721494BD0005F9CDD /* Main.storyboard */; };
 		77EFDCCB21494BD1005F9CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCA21494BD1005F9CDD /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 		779616C6214B0B780003C4B7 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		77CD63C52149785400D396DA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77CD63CA2149851000D396DA /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		77E5DB54214C066D0011F938 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		77E5DB56214C1CC00011F938 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		77E5DB58214C1E520011F938 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		77EFDCC021494BD0005F9CDD /* WehkampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WehkampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFDCC321494BD0005F9CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77EFDCC821494BD0005F9CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 				771C54D02149B80A00B023C5 /* RxMoya+Extensions.swift */,
 				771C54D22149BF1B00B023C5 /* UIViewController+Extensions.swift */,
 				77F14147214B01BC00FAC36A /* Decodable+Extensions.swift */,
+				77E5DB56214C1CC00011F938 /* UIColor+Extensions.swift */,
+				77E5DB58214C1E520011F938 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 				77F14142214ADD9900FAC36A /* Models */,
 				77F14140214ADD2100FAC36A /* BasketViewModel.swift */,
 				77F14145214AFB1900FAC36A /* BasketRouter.swift */,
+				77E5DB54214C066D0011F938 /* ProductViewModel.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -484,7 +493,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E5DB55214C066D0011F938 /* ProductViewModel.swift in Sources */,
 				77F1413F214ADCF500FAC36A /* BasketViewController.swift in Sources */,
+				77E5DB59214C1E520011F938 /* UIView+Extensions.swift in Sources */,
 				779616C7214B0B780003C4B7 /* ProductCell.swift in Sources */,
 				77CD63C62149785400D396DA /* LoginViewController.swift in Sources */,
 				77EFDCF021497061005F9CDD /* Router.swift in Sources */,
@@ -502,6 +513,7 @@
 				77EFDCF32149709E005F9CDD /* Routable.swift in Sources */,
 				7785143D21499C9300A2B1D8 /* Token.swift in Sources */,
 				771C54D32149BF1B00B023C5 /* UIViewController+Extensions.swift in Sources */,
+				77E5DB57214C1CC00011F938 /* UIColor+Extensions.swift in Sources */,
 				77F14146214AFB1900FAC36A /* BasketRouter.swift in Sources */,
 				7785143F21499D4A00A2B1D8 /* LoginRouter.swift in Sources */,
 				77EFDCE7214950AF005F9CDD /* ServerApiService.swift in Sources */,

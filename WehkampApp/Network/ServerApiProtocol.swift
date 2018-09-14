@@ -14,4 +14,6 @@ protocol ServerApiProtocol {
     func authorization(login: String, password: String) -> Single<Token>
     
     func basket() -> Single<[Product]>
+    
+    func updateItemsCount(id: String, count: Int) -> Single<Product>
 }

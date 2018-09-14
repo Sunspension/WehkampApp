@@ -14,6 +14,8 @@ enum ServerApiService {
     case login(login: String, password: String)
     
     case basket
+    
+    case updateItemsCount(id: String, count: Int)
 }
 
 extension ServerApiService {
@@ -29,6 +31,9 @@ extension ServerApiService {
             params["username"] = login
             params["password"] = password
             break
+            
+        case .updateItemsCount(_, let count):
+            params["number_of_items"] = count
             
         default:
             break
@@ -69,6 +74,9 @@ extension ServerApiService: TargetType {
             
         case .basket:
             return "/service/basket/basket"
+            
+        case .updateItemsCount(let id, _):
+            return "/service/basket/basket/items/\(id)"
         }
     }
     
@@ -78,6 +86,9 @@ extension ServerApiService: TargetType {
             
         case .login:
             return .post
+            
+        case .updateItemsCount:
+            return .put
             
         case .basket:
             return .get

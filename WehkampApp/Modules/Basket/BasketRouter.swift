@@ -11,6 +11,8 @@ import UIKit
 protocol BasketRoutable {
     
     func logout()
+    
+    func addItemController()
 }
 
 class BasketRouter {
@@ -37,5 +39,10 @@ extension BasketRouter: BasketRoutable {
         _storage.deleteToken()
         let controller = _router.controller(.login)
         _view?.navigationController?.setViewControllers([controller], animated: true)
+    }
+    
+    func addItemController() {
+        
+        
     }
 }
