@@ -47,6 +47,7 @@ class ProductCell: UITableViewCell {
     override func prepareForReuse() {
         
         _bag = DisposeBag()
+        productImage?.image = nil
         setupShadow()
     }
     
@@ -77,14 +78,13 @@ extension ProductCell {
         
         if let url = URL(string: viewModel.productImage + resize) {
             
-            productImage.af_setImage(withURL: url)
+            productImage.af_setImage(withURL: url, imageTransition: .crossDissolve(0.3), runImageTransitionIfCached: true)
         }
         
-        // viewModel
-        viewModel.plusItem = plus.rx.tap.asDriver()
-        viewModel.minusItem = minus.rx.tap.asDriver()
-        viewModel.deleteItem = delete.rx.tap.asObservable()
-            .flatMap({ Observable.just(indexPath) })
+        plus.rx.tap.bind { viewModel.plusCount() }.disposed(by: _bag)
+        minus.rx.tap.bind { viewModel.minusCount() }.disposed(by: _bag)
+        delete.rx.tap.bind { viewModel.deleteItem(indexPath) }.disposed(by: _bag)
+        
         viewModel.count.bind(to: count.rx.text).disposed(by: _bag)
         viewModel.price.bind(to: price.rx.text).disposed(by: _bag)
     }

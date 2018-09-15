@@ -167,6 +167,7 @@
 		77EFDCB721494BD0005F9CDD = {
 			isa = PBXGroup;
 			children = (
+				771C54CF2149B7F200B023C5 /* Extensions */,
 				77EFDCC221494BD0005F9CDD /* WehkampApp */,
 				77EFDCD721494BD2005F9CDD /* WehkampAppTests */,
 				77EFDCC121494BD0005F9CDD /* Products */,
@@ -187,7 +188,6 @@
 		77EFDCC221494BD0005F9CDD /* WehkampApp */ = {
 			isa = PBXGroup;
 			children = (
-				771C54CF2149B7F200B023C5 /* Extensions */,
 				77EFDCF721497449005F9CDD /* Modules */,
 				77EFDCF121497085005F9CDD /* Router */,
 				77EFDCEC21496998005F9CDD /* Managers */,

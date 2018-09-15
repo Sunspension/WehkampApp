@@ -130,6 +130,6 @@ class BasketViewController: UITableViewController {
     private func updateDataSource(_ items: [ProductViewModel]) {
         
         _items = items
-        tableView.reloadData()
+        tableView.reloadSections([0], with: .automatic)
     }
 }

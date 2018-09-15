@@ -22,21 +22,6 @@ class ProductViewModel {
     
     private let _price = BehaviorSubject<String>(value: "0")
     
-    var plusItem = Driver.just(()) {
-        
-        didSet { setupPlusItem() }
-    }
-    
-    var minusItem = Driver.just(()) {
-        
-        didSet { setupMinusItem() }
-    }
-    
-    var deleteItem = Observable.just(IndexPath()) {
-        
-        didSet { setupDeleteItem() }
-    }
-    
     var productName: String {
         
         return _product.name
@@ -72,42 +57,22 @@ class ProductViewModel {
         setPrice()
     }
     
-    private func setupPlusItem() {
-        
-        plusItem.drive(onNext: { [unowned self] _ in
-            
-            if self._product.count == self._product.maxCount { return }
-            self.updateItemsCount(self._product.count + 1)
-        
-        }).disposed(by: _bag)
-    }
-    
-    private func setupMinusItem() {
-        
-        minusItem.drive(onNext: { [unowned self] _ in
-            
-            if self._product.count == 1 { return }
-            self.updateItemsCount(self._product.count - 1)
-            
-        }).disposed(by: _bag)
-    }
-    
-    private func setupDeleteItem() {
-        
-        deleteItem
-            .asObservable()
-            .map({ [unowned self] indexPath in
-                
-                self.deleteItemAction()
-                self.notifyAboutDelete(indexPath)
-            })
-            .subscribe()
-            .disposed(by: _bag)
-    }
-    
-    private func deleteItemAction() {
+    func deleteItem(_ indexPath: IndexPath) {
         
         _api.deleteItem(id: _product.id).subscribe().disposed(by: _bag)
+        self.notifyAboutDelete(indexPath)
+    }
+    
+    func plusCount() {
+        
+        if self._product.count == self._product.maxCount { return }
+        self.updateItemsCount(self._product.count + 1)
+    }
+    
+    func minusCount() {
+        
+        if self._product.count == 1 { return }
+        self.updateItemsCount(self._product.count - 1)
     }
     
     private func updateItemsCount(_ count: Int) {
@@ -130,7 +95,7 @@ class ProductViewModel {
     
     private func setPrice() {
         
-        _price.onNext(String(_product.price / 100))
+        _price.onNext(String(_product.price * Double(_product.count) / 100))
     }
     
     private func setCount() {
