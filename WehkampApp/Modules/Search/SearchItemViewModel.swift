@@ -67,14 +67,14 @@ class SearchItemViewModel {
             .disposed(by: _bag)
     }
     
-    func notifyBasket() {
+    private func notifyBasket() {
         
         let name = Notification.Name(Constants.Notifications.itemAddedToBasketNotification)
         let notification = Notification(name: name)
         NotificationCenter.default.post(notification)
     }
     
-    func notifyAboutError(_ error: Error) {
+    private func notifyAboutError(_ error: Error) {
         
         let name = Notification.Name(Constants.Notifications.itemNotAddedToBasketNotification)
         let notification = Notification(name: name, userInfo: ["error" : error])

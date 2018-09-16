@@ -17,8 +17,6 @@ class SearchViewModel {
     
     private let _api: ServerApiProtocol
     
-    private let _activity = PublishRelay<Bool>()
-    
     private let _onSuccess = PublishRelay<Void>()
     
     private let _onError = PublishRelay<Error>()

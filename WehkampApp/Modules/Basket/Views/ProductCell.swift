@@ -84,8 +84,8 @@ extension ProductCell {
                                      runImageTransitionIfCached: true) { _ in self.busy.stopAnimating() }
         }
         
-        plus.rx.tap.bind { viewModel.plusCount() }.disposed(by: _bag)
-        minus.rx.tap.bind { viewModel.minusCount() }.disposed(by: _bag)
+        plus.rx.tap.bind { viewModel.increaseCount() }.disposed(by: _bag)
+        minus.rx.tap.bind { viewModel.decreaseCount() }.disposed(by: _bag)
         delete.rx.tap.bind { viewModel.deleteItem() }.disposed(by: _bag)
         
         viewModel.count.bind(to: count.rx.text).disposed(by: _bag)

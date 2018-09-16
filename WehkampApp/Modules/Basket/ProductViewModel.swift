@@ -63,13 +63,13 @@ class ProductViewModel {
         notifyAboutDelete()
     }
     
-    func plusCount() {
+    func increaseCount() {
         
         if self._product.count == self._product.maxCount { return }
         self.updateItemsCount(self._product.count + 1)
     }
     
-    func minusCount() {
+    func decreaseCount() {
         
         if self._product.count == 1 { return }
         self.updateItemsCount(self._product.count - 1)
@@ -78,7 +78,7 @@ class ProductViewModel {
     private func updateItemsCount(_ count: Int) {
         
         _api.updateItemsCount(id: _product.id, count: count)
-            .catchError { error in return Single.just(Product(), scheduler: MainScheduler.instance) }
+            .catchErrorJustReturn(Product())
             .filter({ !$0.id.isEmpty })
             .subscribe(onSuccess: { [weak self] in self?.handleUpdatedProduct($0) }, onError: { debugPrint($0) })
             .disposed(by: _bag)

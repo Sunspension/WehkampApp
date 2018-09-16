@@ -21,25 +21,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-bM-9We">
                                 <rect key="frame" x="16" y="242.5" width="343" height="182"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EtP-Js-a8I" customClass="PaddedTextField" customModule="WehkampApp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="EtP-Js-a8I" customClass="PaddedTextField" customModule="WehkampApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.91764705882352937" green="0.95294117647058818" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Dqo-bA-7G2"/>
                                         </constraints>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.59712114726027399" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="729-eV-xrj" customClass="PaddedTextField" customModule="WehkampApp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="729-eV-xrj" customClass="PaddedTextField" customModule="WehkampApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="66" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.91764705882352937" green="0.95294117647058818" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="24i-gb-eFa"/>
                                         </constraints>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.59974315068493156" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rT-c1-AKJ">
                                         <rect key="frame" x="0.0" y="132" width="343" height="50"/>
@@ -57,20 +57,28 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="dUP-qK-pDB"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cfD-6g-bXy">
+                                <rect key="frame" x="177" y="436.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vPw-bM-9We" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1YS-a7-qKR"/>
                             <constraint firstItem="vPw-bM-9We" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IsU-yS-0l2"/>
+                            <constraint firstItem="cfD-6g-bXy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMI-lB-K4c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vPw-bM-9We" secondAttribute="trailing" priority="750" constant="16" id="tCY-F1-CYv"/>
+                            <constraint firstItem="cfD-6g-bXy" firstAttribute="top" secondItem="vPw-bM-9We" secondAttribute="bottom" constant="12" id="ugn-hQ-iX0"/>
                             <constraint firstItem="vPw-bM-9We" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="750" constant="16" id="uwZ-8c-q32"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="pyn-Yi-GT8"/>
                     <connections>
+                        <outlet property="busy" destination="cfD-6g-bXy" id="n3l-yy-DIP"/>
+                        <outlet property="center" destination="1YS-a7-qKR" id="vj7-sn-3uq"/>
                         <outlet property="login" destination="3rT-c1-AKJ" id="qxG-vZ-Jyr"/>
                         <outlet property="password" destination="729-eV-xrj" id="dxB-Wd-WlG"/>
+                        <outlet property="stack" destination="vPw-bM-9We" id="OMz-9p-w4O"/>
                         <outlet property="userName" destination="EtP-Js-a8I" id="fPl-qF-5Rw"/>
                     </connections>
                 </viewController>

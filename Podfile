@@ -17,5 +17,6 @@ target 'WehkampAppTests' do
 pod 'RxBlocking', '~> 4.0'
 pod 'RxTest',     '~> 4.0'
 pod 'Moya/RxSwift', '~> 11.0'
+pod 'RxCocoa', '~> 4.0'
 
 end

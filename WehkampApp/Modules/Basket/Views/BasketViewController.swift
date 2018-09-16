@@ -67,12 +67,12 @@ class BasketViewController: UITableViewController {
         
         let logout = UIBarButtonItem()
         logout.title = "Logout"
-        logout.rx.tap.bind { self.viewModel.logout() }.disposed(by: _bag)
+        logout.rx.tap.bind { self.viewModel.onLogoutAction() }.disposed(by: _bag)
         navigationItem.leftBarButtonItem = logout
         
         let addItem = UIBarButtonItem()
         addItem.title = "Add"
-        addItem.rx.tap.bind { self.viewModel.addItem() }.disposed(by: _bag)
+        addItem.rx.tap.bind { self.viewModel.onAddItemAction() }.disposed(by: _bag)
         navigationItem.rightBarButtonItem = addItem
     }
     

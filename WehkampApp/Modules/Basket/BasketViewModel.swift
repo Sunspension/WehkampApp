@@ -16,7 +16,7 @@ class BasketViewModel {
     
     private let _api: ServerApiProtocol
     
-    private let _router: BasketRoutable
+    private let _router: BasketRoutable?
     
     private let _deleteItem = PublishRelay<ProductViewModel>()
     
@@ -39,16 +39,11 @@ class BasketViewModel {
         return _busy.asObservable()
     }
     
-    init(api: ServerApiProtocol, router: BasketRoutable) {
+    init(api: ServerApiProtocol, router: BasketRoutable? = nil) {
         
         _api = api
         _router = router
         setupNotificationHandler()
-    }
-    
-    func onViewDidLoad() {
-        
-        _busy.accept(true)
     }
     
     func requestBasket() {
@@ -67,14 +62,14 @@ class BasketViewModel {
             }).disposed(by: _bag)
     }
     
-    func logout() {
+    func onLogoutAction() {
         
-        _router.logout()
+        self._router?.logout()
     }
     
-    func addItem() {
+    func onAddItemAction() {
         
-        _router.addItem()
+        self._router?.addItem()
     }
     
     private func createProductViewModels(_ products: [Product]) -> Observable<[ProductViewModel]> {

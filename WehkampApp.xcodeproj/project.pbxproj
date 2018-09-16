@@ -21,6 +21,11 @@
 		7799C19D214D04270041D2BB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7799C19C214D04270041D2BB /* SearchViewController.swift */; };
 		7799C1A1214D04E10041D2BB /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7799C19F214D04E10041D2BB /* SearchItemCell.swift */; };
 		7799C1A2214D04E10041D2BB /* SearchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7799C1A0214D04E10041D2BB /* SearchItemCell.xib */; };
+		77B7EA06214E6EAB00EE6717 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7EA05214E6EAB00EE6717 /* ApiTests.swift */; };
+		77B7EA08214EA1F100EE6717 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7EA07214EA1F100EE6717 /* SearchViewModelTests.swift */; };
+		77B7EA0A214EA69D00EE6717 /* SearchItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7EA09214EA69D00EE6717 /* SearchItemViewModelTests.swift */; };
+		77B7EA0E214EB33100EE6717 /* BasketViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7EA0D214EB33100EE6717 /* BasketViewModelTests.swift */; };
+		77B7EA10214ECFF700EE6717 /* ProductViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7EA0F214ECFF700EE6717 /* ProductViewModelTests.swift */; };
 		77CD63C62149785400D396DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63C52149785400D396DA /* LoginViewController.swift */; };
 		77CD63CB2149851000D396DA /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD63CA2149851000D396DA /* PaddedTextField.swift */; };
 		77E5DB55214C066D0011F938 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E5DB54214C066D0011F938 /* ProductViewModel.swift */; };
@@ -30,7 +35,6 @@
 		77EFDCC921494BD0005F9CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCC721494BD0005F9CDD /* Main.storyboard */; };
 		77EFDCCB21494BD1005F9CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCA21494BD1005F9CDD /* Assets.xcassets */; };
 		77EFDCCE21494BD1005F9CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EFDCCC21494BD1005F9CDD /* LaunchScreen.storyboard */; };
-		77EFDCD921494BD2005F9CDD /* WehkampAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */; };
 		77EFDCE521495005005F9CDD /* ServerApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCE421495005005F9CDD /* ServerApiProtocol.swift */; };
 		77EFDCE7214950AF005F9CDD /* ServerApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCE6214950AF005F9CDD /* ServerApiService.swift */; };
 		77EFDCE92149587C005F9CDD /* ServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFDCE82149587C005F9CDD /* ServerApi.swift */; };
@@ -76,6 +80,11 @@
 		7799C19C214D04270041D2BB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7799C19F214D04E10041D2BB /* SearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
 		7799C1A0214D04E10041D2BB /* SearchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemCell.xib; sourceTree = "<group>"; };
+		77B7EA05214E6EAB00EE6717 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
+		77B7EA07214EA1F100EE6717 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		77B7EA09214EA69D00EE6717 /* SearchItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewModelTests.swift; sourceTree = "<group>"; };
+		77B7EA0D214EB33100EE6717 /* BasketViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModelTests.swift; sourceTree = "<group>"; };
+		77B7EA0F214ECFF700EE6717 /* ProductViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelTests.swift; sourceTree = "<group>"; };
 		77CD63C52149785400D396DA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77CD63CA2149851000D396DA /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		77E5DB54214C066D0011F938 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
@@ -88,7 +97,6 @@
 		77EFDCCD21494BD1005F9CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77EFDCCF21494BD1005F9CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77EFDCD421494BD2005F9CDD /* WehkampAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WehkampAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WehkampAppTests.swift; sourceTree = "<group>"; };
 		77EFDCDA21494BD2005F9CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77EFDCE421495005005F9CDD /* ServerApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiProtocol.swift; sourceTree = "<group>"; };
 		77EFDCE6214950AF005F9CDD /* ServerApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiService.swift; sourceTree = "<group>"; };
@@ -248,7 +256,11 @@
 		77EFDCD721494BD2005F9CDD /* WehkampAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				77EFDCD821494BD2005F9CDD /* WehkampAppTests.swift */,
+				77B7EA05214E6EAB00EE6717 /* ApiTests.swift */,
+				77B7EA07214EA1F100EE6717 /* SearchViewModelTests.swift */,
+				77B7EA09214EA69D00EE6717 /* SearchItemViewModelTests.swift */,
+				77B7EA0D214EB33100EE6717 /* BasketViewModelTests.swift */,
+				77B7EA0F214ECFF700EE6717 /* ProductViewModelTests.swift */,
 				77EFDCDA21494BD2005F9CDD /* Info.plist */,
 			);
 			path = WehkampAppTests;
@@ -496,6 +508,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
@@ -505,6 +518,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
@@ -577,7 +591,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EFDCD921494BD2005F9CDD /* WehkampAppTests.swift in Sources */,
+				77B7EA0A214EA69D00EE6717 /* SearchItemViewModelTests.swift in Sources */,
+				77B7EA10214ECFF700EE6717 /* ProductViewModelTests.swift in Sources */,
+				77B7EA06214E6EAB00EE6717 /* ApiTests.swift in Sources */,
+				77B7EA0E214EB33100EE6717 /* BasketViewModelTests.swift in Sources */,
+				77B7EA08214EA1F100EE6717 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
