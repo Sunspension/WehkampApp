@@ -128,10 +128,17 @@ class SearchViewController: UITableViewController {
             }).disposed(by: _bag)
         
         viewModel.onSuccess
-            .bind { [unowned self] in
+            .bind { [weak self] in
                 
                 let message = "Item successfully added"
-                self.searchController.showError(title: "Success", message: message)
+                self?.searchController.showError(title: "Success", message: message)
+                
+            }.disposed(by: _bag)
+        
+        viewModel.onError
+            .bind { [weak self] error in
+                
+                self?.searchController.showError(message: error.localizedDescription)
                 
             }.disposed(by: _bag)
     }

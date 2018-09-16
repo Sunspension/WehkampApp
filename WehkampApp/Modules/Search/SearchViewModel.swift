@@ -21,9 +21,16 @@ class SearchViewModel {
     
     private let _onSuccess = PublishRelay<Void>()
     
+    private let _onError = PublishRelay<Error>()
+    
     var onSuccess: Observable<Void> {
         
         return _onSuccess.asObservable()
+    }
+    
+    var onError: Observable<Error> {
+        
+        return _onError.asObservable()
     }
     
     init(api: ServerApiProtocol) {
@@ -47,10 +54,20 @@ class SearchViewModel {
     
     private func setupNotification() {
         
-        let update = Notification.Name(Constants.Notifications.itemWasAddedToBasketNotification)
+        let update = Notification.Name(Constants.Notifications.itemAddedToBasketNotification)
         NotificationCenter.default.rx
             .notification(update)
             .bind { [unowned self] _ in self._onSuccess.accept(()) }
+            .disposed(by: _bag)
+        
+        let error = Notification.Name(Constants.Notifications.itemNotAddedToBasketNotification)
+        NotificationCenter.default.rx
+            .notification(error)
+            .bind { [unowned self] notification in
+                
+                let error = notification.userInfo!["error"] as! Error
+                self._onError.accept(error)
+            }
             .disposed(by: _bag)
     }
 }

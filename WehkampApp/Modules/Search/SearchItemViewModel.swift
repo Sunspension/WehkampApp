@@ -43,16 +43,41 @@ class SearchItemViewModel {
     func addItemToBasket() {
         
         _api.addItem(productNumber: _item.productNumber, sizeCode: _item.sizeCode, count: 1)
-            .catchError { _ in Single.just(Response(statusCode: 0, data: Data())) }
-            .filter({ $0.statusCode != 0 })
+            .flatMap({ response -> Single<Response> in
+                
+                return Single.create(subscribe: { event -> Disposable in
+                    
+                    if response.statusCode > 300 {
+                        
+                        let message = String(data: response.data, encoding: String.Encoding.utf8)
+                        event(.error(WAError.message(message: message ?? "Something went wrong")))
+                    }
+                    else { event(.success(response)) }
+                    
+                    return Disposables.create()
+                })
+            })
+            .catchError { [weak self] error in
+                
+                self?.notifyAboutError(error)
+                return Single.just(Response(statusCode: 0, data: Data()))
+            }
+            .filter({ $0.request != nil })
             .subscribe(onSuccess: { [weak self] _ in self?.notifyBasket() })
             .disposed(by: _bag)
     }
     
     func notifyBasket() {
         
-        let name = Notification.Name(Constants.Notifications.itemWasAddedToBasketNotification)
+        let name = Notification.Name(Constants.Notifications.itemAddedToBasketNotification)
         let notification = Notification(name: name)
+        NotificationCenter.default.post(notification)
+    }
+    
+    func notifyAboutError(_ error: Error) {
+        
+        let name = Notification.Name(Constants.Notifications.itemNotAddedToBasketNotification)
+        let notification = Notification(name: name, userInfo: ["error" : error])
         NotificationCenter.default.post(notification)
     }
 }

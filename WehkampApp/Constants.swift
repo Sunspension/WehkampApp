@@ -13,6 +13,7 @@ enum Constants {
     enum Notifications {
         
         static let deleteItemNotification = "WADeleteItemNotification"
-        static let itemWasAddedToBasketNotification = "WAItemWasAddedToBasketNotification"
+        static let itemAddedToBasketNotification = "WAItemAddedToBasketNotification"
+        static let itemNotAddedToBasketNotification = "WAItemNotAddedToBasketNotification"
     }
 }

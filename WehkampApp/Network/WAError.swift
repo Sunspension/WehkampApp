@@ -26,7 +26,7 @@ extension ServerError: CustomStringConvertible {
 enum WAError: Error {
     
     case serverError(error: ServerError),
-    any(message: String)
+    message(message: String)
 }
 
 extension WAError: LocalizedError {
@@ -35,7 +35,7 @@ extension WAError: LocalizedError {
         
         switch self {
             
-        case .any(let message):
+        case .message(let message):
             return message
             
         case .serverError(let error):

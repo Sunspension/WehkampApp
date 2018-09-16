@@ -95,7 +95,7 @@ class BasketViewModel {
         
             }.disposed(by: _bag)
         
-        let update = Notification.Name(Constants.Notifications.itemWasAddedToBasketNotification)
+        let update = Notification.Name(Constants.Notifications.itemAddedToBasketNotification)
         NotificationCenter.default.rx
             .notification(update)
             .bind { [unowned self] _ in self.requestBasket() }

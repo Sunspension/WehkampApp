@@ -41,7 +41,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
         }
         else {
             
-            return WAError.any(message: response.description)
+            return WAError.message(message: response.description)
         }
     }
 }
