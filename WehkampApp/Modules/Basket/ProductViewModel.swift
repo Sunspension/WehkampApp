@@ -57,10 +57,10 @@ class ProductViewModel {
         setPrice()
     }
     
-    func deleteItem(_ indexPath: IndexPath) {
+    func deleteItem() {
         
         _api.deleteItem(id: _product.id).subscribe().disposed(by: _bag)
-        self.notifyAboutDelete(indexPath)
+        notifyAboutDelete()
     }
     
     func plusCount() {
@@ -103,10 +103,23 @@ class ProductViewModel {
         _count.onNext(String(_product.count))
     }
     
-    private func notifyAboutDelete(_ indexPath: IndexPath) {
+    private func notifyAboutDelete() {
         
-        let name = Notification.Name(deleteItemNotification)
-        let notification = Notification(name: name, object: indexPath)
+        let name = Notification.Name(Constants.Notifications.deleteItemNotification)
+        let notification = Notification(name: name, object: self)
         NotificationCenter.default.post(notification)
+    }
+}
+
+extension ProductViewModel: Hashable {
+    
+    var hashValue: Int {
+        
+        return _product.id.hashValue ^ 34
+    }
+    
+    static func == (lhs: ProductViewModel, rhs: ProductViewModel) -> Bool {
+        
+        return lhs._product.id == rhs._product.id
     }
 }

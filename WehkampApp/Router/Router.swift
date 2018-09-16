@@ -31,8 +31,9 @@ class Router: Routable {
             let controller = self._storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
             let api = resolver.resolve(ServerApiProtocol.self)!
             let storage = resolver.resolve(StorageManagable.self)!
-            let viewModel = LoginViewModel(api: api, storage: storage)
-            viewModel.router = LoginRouter(view: controller, self)
+            let router = LoginRouter(view: controller, self)
+            let viewModel = LoginViewModel(api: api, storage: storage, router: router)
+            
             controller.viewModel = viewModel
             
             return controller
@@ -41,12 +42,23 @@ class Router: Routable {
         _container.register(BasketViewController.self) { resolver in
             
             let controller = BasketViewController(style: .plain)
-            let api = resolver.resolve(ServerApiProtocol.self)!
-            let viewModel = BasketViewModel(api: api)
             let storage = resolver.resolve(StorageManagable.self)!
             let router = BasketRouter(view: controller, router: self, storage: storage)
             
-            viewModel.router = router
+            let api = resolver.resolve(ServerApiProtocol.self)!
+            let viewModel = BasketViewModel(api: api, router: router)
+            
+            controller.viewModel = viewModel
+            
+            return controller
+        }
+        
+        _container.register(SearchViewController.self) { resolver in
+            
+            let controller = SearchViewController(style: .plain)
+            let api = resolver.resolve(ServerApiProtocol.self)!
+            let viewModel = SearchViewModel(api: api)
+            
             controller.viewModel = viewModel
             
             return controller
@@ -78,6 +90,9 @@ class Router: Routable {
             
         case .basket:
             return _container.resolve(BasketViewController.self)!
+            
+        case .search:
+            return _container.resolve(SearchViewController.self)!
         }
     }
 }

@@ -20,5 +20,7 @@ protocol ServerApiProtocol {
     
     func deleteItem(id: String) -> Single<Response>
     
-    func addItem(productNumber: String, sizeCode: Int, count: Int) -> Single<Response>
+    func addItem(productNumber: String, sizeCode: String, count: Int) -> Single<Response>
+    
+    func search(productNumber: String) -> Single<[SearchItem]>
 }

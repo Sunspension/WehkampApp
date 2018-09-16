@@ -33,14 +33,15 @@ class ProductCell: UITableViewCell {
     
     @IBOutlet weak var delete: UIButton!
     
+    @IBOutlet weak var busy: UIActivityIndicatorView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
-        
         backgroundColor = .background
-        container.layer.cornerRadius = 20
+        container.layer.cornerRadius = 15
         setupShadow()
     }
     
@@ -59,7 +60,7 @@ class ProductCell: UITableViewCell {
                 
                 guard let bounds = bounds else { return }
                 
-                let path = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
+                let path = UIBezierPath(roundedRect: bounds, cornerRadius: 15).cgPath
                 self.container.layer.shadowPath = path
                 
             }.disposed(by: _bag)
@@ -68,7 +69,7 @@ class ProductCell: UITableViewCell {
 
 extension ProductCell {
     
-    func configure(_ viewModel: ProductViewModel, _ indexPath: IndexPath) {
+    func configure(_ viewModel: ProductViewModel) {
         
         productName.text = viewModel.productName
         availability.text = viewModel.availability
@@ -78,12 +79,14 @@ extension ProductCell {
         
         if let url = URL(string: viewModel.productImage + resize) {
             
-            productImage.af_setImage(withURL: url, imageTransition: .crossDissolve(0.3), runImageTransitionIfCached: true)
+            productImage.af_setImage(withURL: url,
+                                     imageTransition: .crossDissolve(0.3),
+                                     runImageTransitionIfCached: true) { _ in self.busy.stopAnimating() }
         }
         
         plus.rx.tap.bind { viewModel.plusCount() }.disposed(by: _bag)
         minus.rx.tap.bind { viewModel.minusCount() }.disposed(by: _bag)
-        delete.rx.tap.bind { viewModel.deleteItem(indexPath) }.disposed(by: _bag)
+        delete.rx.tap.bind { viewModel.deleteItem() }.disposed(by: _bag)
         
         viewModel.count.bind(to: count.rx.text).disposed(by: _bag)
         viewModel.price.bind(to: price.rx.text).disposed(by: _bag)

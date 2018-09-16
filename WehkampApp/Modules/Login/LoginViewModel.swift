@@ -18,6 +18,8 @@ class LoginViewModel {
     
     private let _storage: StorageManagable
     
+    private let _router: LoginRoutable
+    
     private let _loginActivity = PublishRelay<Bool>()
     
     var loginActivity: Observable<Bool> {
@@ -40,13 +42,12 @@ class LoginViewModel {
             .combineLatest(userName, password) { !$0.isEmpty && !$1.isEmpty }
     }
     
-    var router: LoginRoutable?
     
-    
-    init(api: ServerApiProtocol, storage: StorageManagable) {
+    init(api: ServerApiProtocol, storage: StorageManagable, router: LoginRoutable) {
         
         _api = api
         _storage = storage
+        _router = router
     }
     
     private func setupLoginAction() {
@@ -68,7 +69,7 @@ class LoginViewModel {
                 
                 self?._loginActivity.accept(false)
                 self?._storage.saveToken(token.jwt)
-                self?.router?.onSuccessLogin()
+                self?._router.onSuccessLogin()
                 
             }).disposed(by: _bag)
     }
@@ -80,7 +81,7 @@ class LoginViewModel {
             .catchError({ [weak self] error -> Single<Token> in
                 
                 self?._loginActivity.accept(false)
-                self?.router?.onError(error: error)
+                self?._router.onError(error: error)
                 
                 return Single.just(Token(jwt: ""))
             })

@@ -24,7 +24,6 @@ class BasketViewController: UITableViewController {
     
     var viewModel: BasketViewModel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +45,9 @@ class BasketViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "product", for: indexPath) as! ProductCell
         let product = _items[indexPath.row]
-        cell.configure(product, indexPath)
+        cell.configure(product)
         
         return cell
     }
@@ -57,21 +56,23 @@ class BasketViewController: UITableViewController {
     
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
-        if _refresh.isRefreshing { self.requestBasket() }
+        if _refresh.isRefreshing { requestBasket() }
     }
     
     // MARK: - Private methods
     
     private func setupNavigationItem() {
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         let logout = UIBarButtonItem()
         logout.title = "Logout"
-        viewModel.logoutAction = logout.rx.tap.asObservable()
+        logout.rx.tap.bind { self.viewModel.logout() }.disposed(by: _bag)
         navigationItem.leftBarButtonItem = logout
         
         let addItem = UIBarButtonItem()
         addItem.title = "Add"
-        viewModel.addItemAction = addItem.rx.tap.asObservable()
+        addItem.rx.tap.bind { self.viewModel.addItem() }.disposed(by: _bag)
         navigationItem.rightBarButtonItem = addItem
     }
     
@@ -80,11 +81,18 @@ class BasketViewController: UITableViewController {
         tableView.backgroundColor = .background
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 44
         tableView.tableFooterView = UIView()
         
         let nib = UINib(nibName: String(describing: ProductCell.self), bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.register(nib, forCellReuseIdentifier: "product")
+        
+        let busy = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        busy.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        busy.hidesWhenStopped = true
+        busy.startAnimating()
+        
+        tableView.tableFooterView = busy
     }
     
     private func setupRefresh() {
@@ -101,35 +109,29 @@ class BasketViewController: UITableViewController {
     
     private func setupViewModel() {
         
-        viewModel.deleteItemAction.bind { [unowned self] indexPath in
+        viewModel.deleteItem.bind { [unowned self] viewModel in
             
-            self._items.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            let index = self._items.index(of: viewModel)!
+            self._items.remove(at: index)
+            self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
             
             }.disposed(by: _bag)
+        
+        viewModel.products.bind { [weak self] in
+            
+            self?._refresh.endRefreshing()
+            self?._items = $0
+            self?.tableView.reloadSections([0], with: .automatic)
+        
+            }.disposed(by: _bag)
+        
+        viewModel.busy.take(1).bind { [weak self] _ in self?.tableView.tableFooterView = nil }
+            .disposed(by: _bag)
     }
     
     @objc private func requestBasket() {
         
         if self.tableView.isDragging { return }
-        
         viewModel.requestBasket()
-            .subscribe(onNext: { [weak self] in
-                
-                self?._refresh.endRefreshing()
-                self?.updateDataSource($0)
-                
-                }, onError: { [weak self] in
-                    
-                    self?._refresh.endRefreshing()
-                    debugPrint($0)
-            })
-            .disposed(by: _bag)
-    }
-    
-    private func updateDataSource(_ items: [ProductViewModel]) {
-        
-        _items = items
-        tableView.reloadSections([0], with: .automatic)
     }
 }

@@ -12,7 +12,9 @@ protocol BasketRoutable {
     
     func logout()
     
-    func addItemController()
+    func addItem()
+    
+    func showSuccess()
 }
 
 class BasketRouter {
@@ -41,8 +43,15 @@ extension BasketRouter: BasketRoutable {
         _view?.navigationController?.setViewControllers([controller], animated: true)
     }
     
-    func addItemController() {
+    func addItem() {
         
+        let controller = _router.controller(.search)
+        let navi = UINavigationController(rootViewController: controller)
+        _view?.present(navi, animated: true, completion: nil)
+    }
+    
+    func showSuccess() {
         
+        _view?.showError(title: "Success", message: "Item was added successfully")
     }
 }

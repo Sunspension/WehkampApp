@@ -19,12 +19,14 @@ enum ServerApiService {
     
     case delete(id: String)
     
-    case addItem(productNumber: String, sizeCode: Int, count: Int)
+    case addItem(productNumber: String, sizeCode: String, count: Int)
+    
+    case search(productNumber: String)
 }
 
 extension ServerApiService {
     
-    var parameters: [String : Any] {
+    var bodyParameters: [String : Any] {
         
         var params = [String : Any]()
         
@@ -43,9 +45,12 @@ extension ServerApiService {
             
         case .addItem(let productNumber, let sizeCode, let count):
             
-            params["product_number"] = productNumber
-            params["size_code"] = sizeCode
-            params["number_of_products"] = count
+            var item = [String : Any]()
+            item["product_number"] = productNumber
+            item["size_code"] = sizeCode
+            item["number_of_products"] = count
+            params["items"] = [item]
+            
             break
             
         default:
@@ -53,6 +58,19 @@ extension ServerApiService {
         }
         
         return params
+    }
+    
+    var queryParameters: [String : Any] {
+        
+        switch self {
+            
+        case .search(let productNumber):
+            
+            return ["productNumbers" : productNumber]
+            
+        default:
+            return [String : Any]()
+        }
     }
 }
 
@@ -62,7 +80,7 @@ extension ServerApiService: AccessTokenAuthorizable {
         
         switch self {
             
-        case .login:
+        case .login, .search:
             return .none
             
         default:
@@ -96,6 +114,9 @@ extension ServerApiService: TargetType {
             
         case .addItem:
             return "/service/basket/basket/items"
+            
+        case .search:
+            return "/service/producttiles"
         }
     }
     
@@ -109,7 +130,7 @@ extension ServerApiService: TargetType {
         case .updateItemsCount:
             return .put
             
-        case .basket:
+        case .basket, .search:
             return .get
             
         case .delete:
@@ -124,7 +145,14 @@ extension ServerApiService: TargetType {
     
     var task: Task {
         
-        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        switch self {
+            
+        default:
+            
+            return .requestCompositeParameters(bodyParameters: bodyParameters,
+                                               bodyEncoding: JSONEncoding.default,
+                                               urlParameters: queryParameters )
+        }
     }
     
     var headers: [String : String]? {

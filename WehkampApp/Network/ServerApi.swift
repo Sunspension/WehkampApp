@@ -52,9 +52,15 @@ extension ServerApi: ServerApiProtocol {
         return provider.rx.request(.delete(id: id))
     }
     
-    func addItem(productNumber: String, sizeCode: Int, count: Int) -> Single<Response> {
+    func addItem(productNumber: String, sizeCode: String, count: Int) -> Single<Response> {
         
         let addItem = ServerApiService.addItem(productNumber: productNumber, sizeCode: sizeCode, count: count)
         return provider.rx.request(addItem)
+    }
+    
+    func search(productNumber: String) -> Single<[SearchItem]> {
+        
+        return provider.rx.request(.search(productNumber: productNumber))
+            .mapResponse([SearchItem].self)
     }
 }

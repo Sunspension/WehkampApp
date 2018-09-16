@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var password: PaddedTextField!
     
-    @IBOutlet weak var login: UIButton!
+    @IBOutlet private weak var login: UIButton!
     
     
     var viewModel: LoginViewModel!
