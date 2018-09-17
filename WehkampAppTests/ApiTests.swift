@@ -27,14 +27,9 @@ class ApiTests: XCTestCase {
         
         executeWithAsyncResult { promise in
             
-            self._api.authorization(login: "iosassessment@wehkamp.nl", password: "swiftrules")
-                .subscribe(onSuccess: { token in
-                    
-                    XCTAssert(!token.jwt.isEmpty)
-                    self._storage.saveToken(token.jwt)
-                    promise.fulfill()
-                    
-                }).disposed(by: self._bag)
+            self.authorization()
+                .subscribe(onSuccess: { _ in promise.fulfill() })
+                .disposed(by: self._bag)
         }
     }
     
@@ -43,10 +38,11 @@ class ApiTests: XCTestCase {
         executeWithAsyncResult { promise in
             
             self.authorization()
+                .flatMap({ [unowned self] _ in self.addItem() })
                 .flatMap({ [unowned self] _ in self._api.basket() })
-                .subscribe(onSuccess: { _ in
+                .subscribe(onSuccess: { items in
                     
-                    // It's not a mistake to get empty list
+                    XCTAssert(!items.isEmpty)
                     promise.fulfill()
                     
             }).disposed(by: self._bag)

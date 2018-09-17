@@ -17,20 +17,6 @@ private enum CodingKeys: String, CodingKey {
     name = "title"
 }
 
-struct SearchItem2: Decodable {
-    
-    var productName = ""
-    
-    var productNumber = ""
-    
-    init() {}
-    
-    init(from decoder: Decoder) throws {
-        
-        
-    }
-}
-
 struct SearchItem: Decodable {
     
     var productName = ""

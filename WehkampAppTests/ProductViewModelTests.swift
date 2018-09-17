@@ -69,14 +69,46 @@ class ProductViewModelTests: XCTestCase {
     
     func testDeleteItem() {
         
+        let promise = expectation(description: "delete item")
         
+        addItem(number: "785012", sizeCode: "044", count: 1)
+            .flatMap({ response -> Single<String> in
+                
+                Single.create(subscribe: { event -> Disposable in
+                    
+                    if response.statusCode < 300 {
+                        
+                        let serialized = try? JSONSerialization.jsonObject(with: response.data, options: .allowFragments)
+                        
+                        if let objects = serialized as? [[String : Any]], let id = objects.first?["id"] as? String {
+                            
+                            event(.success(id))
+                        }
+                        else {
+                            
+                            event(.error(WAError.message(message: "Parsing error")))
+                        }
+                    }
+                    else {
+                        
+                        event(.error(WAError.message(message: "Something went wrong")))
+                    }
+                    
+                    return Disposables.create()
+                })
+            })
+            .flatMap({ [unowned self] id in self._api.deleteItem(id: id)})
+            .subscribe(onSuccess: { _ in promise.fulfill() })
+            .disposed(by: _bag)
+        
+        waitForExpectations(timeout: 5) { error in print(error ?? "") }
     }
     
     private func addProduct(count: Int) -> Single<Product> {
         
         return authorization()
-            .flatMap { _ in  self.addItem(count: count) }
-            .flatMap { _ in self._api.basket() }
+            .flatMap { [unowned self] _ in  self.addItem(count: count) }
+            .flatMap { [unowned self] _ in self._api.basket() }
             .flatMap { items in Single.just(items.first!) }
     }
     

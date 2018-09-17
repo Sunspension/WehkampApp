@@ -22,7 +22,7 @@ class SearchViewModelTests: XCTestCase {
         
         let promise = expectation(description: "search")
         
-        _viewModel.search("785026").subscribe(onNext: { items in
+        _viewModel.search("785023").subscribe(onNext: { items in
             
             XCTAssert(!items.isEmpty)
             promise.fulfill()

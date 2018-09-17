@@ -49,16 +49,18 @@ class BasketViewModel {
     func requestBasket() {
         
         _api.basket().asObservable()
-            .catchError({ error in debugPrint(error); return Observable.just([Product]()) })
+            .catchErrorJustReturn([Product]())
             .flatMap({ [weak self] in self?.createProductViewModels($0) ?? Observable.just([ProductViewModel]()) })
             .subscribe(onNext: { [weak self] in
                 
                 self?._busy.accept(false)
-                self?._products.accept($0) }, onError: { [weak self] in
+                self?._products.accept($0) },
+                       
+                       onError: { [weak self] in
                         
                         self?._busy.accept(false)
                         debugPrint($0)
-            
+                        
             }).disposed(by: _bag)
     }
     
