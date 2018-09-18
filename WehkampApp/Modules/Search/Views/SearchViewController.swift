@@ -37,7 +37,7 @@ class SearchViewController: UITableViewController {
         return label
     }()
     
-    var viewModel: SearchViewModel!
+    var viewModel: SearchViewModelProtocol!
     
     
     override func viewDidLoad() {

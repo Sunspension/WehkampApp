@@ -10,7 +10,20 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class LoginViewModel {
+protocol LoginViewModelProtocol {
+    
+    var loginActivity: Observable<Bool> { get }
+    
+    var userName: Observable<String> { get set }
+    
+    var password: Observable<String> { get set }
+    
+    var loginAction: Observable<Void> { get set }
+    
+    var isCanLogin: Observable<Bool> { get }
+}
+
+class LoginViewModel: LoginViewModelProtocol {
     
     private let _bag = DisposeBag()
     

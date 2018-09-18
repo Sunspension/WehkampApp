@@ -10,7 +10,22 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class BasketViewModel {
+protocol BasketViewModelProtocol {
+    
+    var products: Observable<[ProductViewModel]> { get }
+    
+    var deleteItem: Observable<ProductViewModel> { get }
+    
+    var busy: Observable<Bool> { get }
+    
+    func requestBasket()
+    
+    func onLogoutAction()
+    
+    func onAddItemAction()
+}
+
+class BasketViewModel: BasketViewModelProtocol {
     
     private let _bag = DisposeBag()
     

@@ -69,7 +69,7 @@ class ProductCell: UITableViewCell {
 
 extension ProductCell {
     
-    func configure(_ viewModel: ProductViewModel) {
+    func configure(_ viewModel: ProductViewModelProtocol) {
         
         productName.text = viewModel.productName
         availability.text = viewModel.availability

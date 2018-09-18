@@ -22,7 +22,12 @@ class BasketViewController: UITableViewController {
         return control
     }()
     
-    var viewModel: BasketViewModel!
+    var viewModel: BasketViewModelProtocol!
+    
+    deinit {
+        
+        print("")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +72,18 @@ class BasketViewController: UITableViewController {
         
         let logout = UIBarButtonItem()
         logout.title = "Logout"
-        logout.rx.tap.bind { self.viewModel.onLogoutAction() }.disposed(by: _bag)
+        logout.rx.tap
+            .bind { [unowned self] in self.viewModel.onLogoutAction() }
+            .disposed(by: _bag)
+        
         navigationItem.leftBarButtonItem = logout
         
         let addItem = UIBarButtonItem()
         addItem.title = "Add"
-        addItem.rx.tap.bind { self.viewModel.onAddItemAction() }.disposed(by: _bag)
+        addItem.rx.tap
+            .bind { [unowned self] in self.viewModel.onAddItemAction() }
+            .disposed(by: _bag)
+        
         navigationItem.rightBarButtonItem = addItem
     }
     

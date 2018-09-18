@@ -11,7 +11,16 @@ import RxSwift
 import Moya
 import RxCocoa
 
-class SearchViewModel {
+protocol SearchViewModelProtocol {
+    
+    var onSuccess: Observable<Void> { get }
+    
+    var onError: Observable<Error> { get }
+    
+    func search(_ productNumber: String) -> Observable<[SearchItemViewModel]>
+}
+
+class SearchViewModel: SearchViewModelProtocol {
     
     private let _bag = DisposeBag()
     

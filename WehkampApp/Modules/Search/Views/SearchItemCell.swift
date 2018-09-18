@@ -63,7 +63,7 @@ class SearchItemCell: UITableViewCell {
 
 extension SearchItemCell {
     
-    func configure(_ viewModel: SearchItemViewModel) {
+    func configure(_ viewModel: SearchItemViewModelProtocol) {
         
         itemTitle.text = viewModel.itemName
         itemPrice.text = viewModel.price

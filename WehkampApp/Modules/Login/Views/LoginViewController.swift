@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var center: NSLayoutConstraint!
     
-    var viewModel: LoginViewModel!
+    var viewModel: LoginViewModelProtocol!
     
     
     override func viewDidLoad() {

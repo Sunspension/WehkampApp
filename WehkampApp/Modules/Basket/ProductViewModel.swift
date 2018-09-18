@@ -10,7 +10,26 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class ProductViewModel {
+protocol ProductViewModelProtocol {
+    
+    var productName: String { get }
+    
+    var availability: String { get }
+    
+    var productImage: String { get }
+    
+    var count: Observable<String> { get }
+    
+    var price: Observable<String> { get }
+    
+    func deleteItem()
+    
+    func increaseCount()
+    
+    func decreaseCount()
+}
+
+class ProductViewModel: ProductViewModelProtocol {
     
     private let _bag = DisposeBag()
     

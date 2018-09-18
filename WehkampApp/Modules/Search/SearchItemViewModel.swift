@@ -10,7 +10,18 @@ import Foundation
 import RxSwift
 import Moya
 
-class SearchItemViewModel {
+protocol SearchItemViewModelProtocol {
+    
+    var itemName: String { get }
+    
+    var price: String { get }
+    
+    var productImage: String { get }
+    
+    func addItemToBasket()
+}
+
+class SearchItemViewModel: SearchItemViewModelProtocol {
     
     private let _bag = DisposeBag()
     
